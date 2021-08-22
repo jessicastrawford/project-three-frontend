@@ -1,18 +1,18 @@
 import { NavLink } from 'react-router-dom'
 import 'materialize-css'
-import { Navbar, NavItem } from 'react-materialize'
+// import { Navbar } from 'react-materialize'
 
 function Nav () {
   return (
 
-    <Navbar
+    <Nav
+  
       alignLinks="right">
       <NavLink exact to="/">Home</NavLink>
       <NavLink to="/clubs" className="right">Clubs</NavLink>
-      <NavItem to="/map">Map</NavItem>
-      <NavItem to="/login">Login</NavItem>
-      <NavItem to="/register">Register</NavItem>
-    </Navbar>
+      <NavLink to="/map">Map</NavLink>
+      <NavLink to="/register">Register</NavLink>
+    </Nav>
   )
 }
 

@@ -15,7 +15,7 @@ function Home() {
         interval: 6000,
       }}
     >
-      <Slide image={<img alt="" src="http://lorempixel.com/780/580/nature/1"/>}>
+      <Slide image={<img alt="" src="https://images.ctfassets.net/u0haasspfa6q/2xl0w4P7lIAVEESotMPxlF/12eb1aba070dfbbbd0d0c1127798abec/AMA_EVERTON_LIVERPOOL_RJB_27"/>}>
         <Caption placement="center">
           <h3>
         This is our big Tagline!
