@@ -1,0 +1,12 @@
+{
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#77dd88",
+    "titleBar.activeBackground": "#77dd88",
+    "titleBar.inactiveBackground": "#77dd88",
+    "titleBar.inactiveForeground": "#000000",
+    "titleBar.activeForeground": "#000000",
+    "statusBar.foreground": "#000000",
+
+  },
+  "window.title": "Away-days Server"
+}

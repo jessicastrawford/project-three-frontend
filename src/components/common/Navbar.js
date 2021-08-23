@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom'
+import 'materialize-css'
+// import { Navbar } from 'react-materialize'
 
-function Navbar() {
+function Nav () {
   return (
     <nav className="navbar">
       <div className="navbar-wrapper">
@@ -14,4 +16,6 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Nav
+
+// Add a userIsAuth ==> then show Logout onClick button
