@@ -7,6 +7,7 @@ import ClubsIndex from './components/clubs/ClubsIndex'
 import Login from './auth/Login'
 import Register from './auth/Register'
 import InteractiveMap from './components/maps/InteractiveMap'
+import Footer from './components/common/Footer'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <InteractiveMap />
         </Route>
       </Switch>
+      <Footer />
     </BrowserRouter>
   )
 }

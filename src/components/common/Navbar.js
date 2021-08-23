@@ -2,8 +2,8 @@ import { NavLink } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <nav>
-      <div>
+    <nav className="navbar">
+      <div className="navbar-wrapper">
         <NavLink exact to="/">Home</NavLink>
         <NavLink to="/clubs">Clubs</NavLink>
         <NavLink to="/maps">Maps</NavLink>
