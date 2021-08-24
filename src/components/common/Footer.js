@@ -7,38 +7,40 @@ function Footer() {
     <footer>
       <div className="footer-container">
         <Link to="/about">Meet the team behind Away Days</Link>
-        <div>
-          <hr/>
-          <ul>
-            <li>
-              {`© ${new Date().getFullYear()} Away Days`}
-            </li>
-            <li>
+        <hr/>
+        <div className="icons">
+          <div>
+            <ul>
+              <li>
+                {`© ${new Date().getFullYear()} Away Days`}
+              </li>
+              <li>
           Privacy
-            </li>
-            <li>
+              </li>
+              <li>
           Terms
-            </li>
-            <li>
+              </li>
+              <li>
           Sitemap
-            </li>
-            <li>
+              </li>
+              <li>
           Company details 
-            </li>
-          </ul>
-        </div>
-        <div className="social-media-icons">
-          <ul>
-            <li>
-              <SocialIcon url="https://en-gb.facebook.com/" bgColor="#000000"/>
-            </li>
-            <li>
-              <SocialIcon url="https://twitter.com/?lang=en-gb" bgColor="#000000"/>
-            </li>
-            <li>
-              <SocialIcon url="https://www.instagram.com/" bgColor="#000000"/>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
+          <div className="social-media-icons">
+            <ul>
+              <li>
+                <SocialIcon url="https://en-gb.facebook.com/" bgColor="#000000"/>
+              </li>
+              <li>
+                <SocialIcon url="https://twitter.com/?lang=en-gb" bgColor="#000000"/>
+              </li>
+              <li>
+                <SocialIcon url="https://www.instagram.com/" bgColor="#000000"/>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 

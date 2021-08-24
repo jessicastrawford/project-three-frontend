@@ -108,12 +108,19 @@ footer{
     text-decoration: none !important;
     text-align: center;
     color:black;
-    
+    // display: flex;
+    // justify-content: center;
+    .icons{
+      display: flex;
+      justify-content: center;
+    }
+
   }
   ul{
     font-family: 'Nunito', sans-serif;
     list-style: none;
     display: flex;
+
     li{
       padding:10px;
     }
