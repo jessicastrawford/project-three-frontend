@@ -1,5 +1,3 @@
-import stadiumImage from '../../assets/Wembley+Stadium_Panorama_Adam+Jacobs+Photography.jpg'
-import Button from './Button'
 
 function Signup() {
   return (
@@ -16,7 +14,6 @@ function Signup() {
             </button>
           </a>
         </div>
-        {/* <img className="signup-image" src={stadiumImage} alt="football-image"/> */}
       </div>
 
     </section>

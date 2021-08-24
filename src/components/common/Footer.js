@@ -6,7 +6,6 @@ function Footer() {
   return (
     <footer>
       <div className="footer-container">
-        <br/>
         <Link to="/about" className="team">Meet the team behind Away Days</Link>
         <hr/>
         <div className="icons">
