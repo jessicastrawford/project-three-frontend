@@ -69,7 +69,7 @@ export const pubs = [
     latitude: 51.4891,
     longitude: -0.2879,
     description: '',
-    image: 'Placeholder Text',
+    image: 'https://www.telegraph.co.uk/content/dam/food-and-drink/2016/09/28/tet_trans_NvBQzQNjv4BqA7N2CxnJWnYI3tCbVBgu9V-UxAzQBOWbRM9zStsHOzU.jpg',
   },
   {
     pubName: 'Coborn',
@@ -78,7 +78,7 @@ export const pubs = [
     latitude: 51.5269,
     longitude: -0.0301,
     description: '',
-    image: 'Placeholder Text',
+    image: 'https://static.designmynight.com/uploads/2017/11/The-Coborn-High-Resolution102-optimised.jpg',
   },
   {
     pubName: 'The Eleanor Arms',
@@ -87,7 +87,7 @@ export const pubs = [
     latitude: 51.5349,
     longitude: -0.0330,
     description: '',
-    image: 'Placeholder Text',
+    image: 'https://pubwiki.co.uk/LondonPubs/Bow/EleanorArms.jpg',
   },
   {
     pubName: 'The Eight Bells',
