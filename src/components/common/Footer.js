@@ -1,43 +1,46 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { SocialIcon } from 'react-social-icons'
 
 function Footer() {
   return (
     <footer>
       <div className="footer-container">
         <Link to="/about">Meet the team behind Away Days</Link>
-        <div>
-          <hr/>
-          <ul>
-            <li>
-              {`© ${new Date().getFullYear()} Away Days`}
-            </li>
-            <li>
+        <hr/>
+        <div className="icons">
+          <div>
+            <ul>
+              <li>
+                {`© ${new Date().getFullYear()} Away Days`}
+              </li>
+              <li>
           Privacy
-            </li>
-            <li>
+              </li>
+              <li>
           Terms
-            </li>
-            <li>
+              </li>
+              <li>
           Sitemap
-            </li>
-            <li>
+              </li>
+              <li>
           Company details 
-            </li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <a href='#'><i className="fab fa-facebook-f"></i></a>
-            </li>
-            <li>
-              <a href='#'><i className="fab fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href='#'><i className="fab fa-instagram"></i></a>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
+          <div className="social-media-icons">
+            <ul>
+              <li>
+                <SocialIcon url="https://en-gb.facebook.com/" bgColor="#000000"/>
+              </li>
+              <li>
+                <SocialIcon url="https://twitter.com/?lang=en-gb" bgColor="#000000"/>
+              </li>
+              <li>
+                <SocialIcon url="https://www.instagram.com/" bgColor="#000000"/>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -47,3 +50,16 @@ function Footer() {
 }
 
 export default Footer
+
+
+// <ul>
+// <li>
+//   <a href='#'><i className="fab fa-facebook-f"></i></a>
+// </li>
+// <li>
+//   <a href='#'><i className="fab fa-twitter"></i></a>
+// </li>
+// <li>
+//   <a href='#'><i className="fab fa-instagram"></i></a>
+// </li>
+// </ul>

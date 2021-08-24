@@ -8,7 +8,7 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import Footer from '../common/Footer'
 import Signup from './Signup'
-import { Link, useParams } from 'react-router-dom'
+// import { Link, useParams } from 'react-router-dom'
 import { getAllPubs } from '../../lib/api'
 
 import image1 from '../../assets/1.jpg'
