@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap'); 
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+.search-bar input {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
 
 // Buttons
 
@@ -176,6 +191,37 @@ footer{
   0% {}
   50% { transform: scaleX(1); opacity: .8;}
   100% {}
+}
+.club-index-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+// .dropdown-wrapper {
+//   display: flex;
+// }
+
+.club-card-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 960px;
+}
+
+.club-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 400px;
+  border: 1px solid rgb(77, 74, 74);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 3px;
+
+  img {
+    height: 80%;
+    width:90%;
+  }
 }
 
 // .navbar {

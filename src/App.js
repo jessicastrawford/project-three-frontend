@@ -8,6 +8,7 @@ import Login from './auth/Login'
 import Register from './auth/Register'
 import InteractiveMap from './components/maps/InteractiveMap'
 import About from './components/common/About'
+import Footer from './components/common/Footer'
 // import './App.scss'
 
 
@@ -35,6 +36,7 @@ function App() {
           <About />
         </Route>
       </Switch>
+      <Footer />
     </BrowserRouter>
   )
 }
