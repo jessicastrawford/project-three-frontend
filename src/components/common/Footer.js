@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { SocialIcon } from 'react-social-icons'
 
 function Footer() {
   return (
@@ -26,16 +27,16 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="social-media-icons">
           <ul>
             <li>
-              <a href='#'><i className="fab fa-facebook-f"></i></a>
+              <SocialIcon url="https://en-gb.facebook.com/" bgColor="#000000"/>
             </li>
             <li>
-              <a href='#'><i className="fab fa-twitter"></i></a>
+              <SocialIcon url="https://twitter.com/?lang=en-gb" bgColor="#000000"/>
             </li>
             <li>
-              <a href='#'><i className="fab fa-instagram"></i></a>
+              <SocialIcon url="https://www.instagram.com/" bgColor="#000000"/>
             </li>
           </ul>
         </div>
@@ -47,3 +48,16 @@ function Footer() {
 }
 
 export default Footer
+
+
+// <ul>
+// <li>
+//   <a href='#'><i className="fab fa-facebook-f"></i></a>
+// </li>
+// <li>
+//   <a href='#'><i className="fab fa-twitter"></i></a>
+// </li>
+// <li>
+//   <a href='#'><i className="fab fa-instagram"></i></a>
+// </li>
+// </ul>
