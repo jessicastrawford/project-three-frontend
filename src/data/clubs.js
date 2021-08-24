@@ -14,9 +14,9 @@ export const clubs = [
   },
   {
     clubName: 'Arsenal F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Arsenal_F.C.#/media/File:Arsenal_FC.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
     league: 'Premier League',
-    mainImage: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/Emirates_Stadium_east_side_at_dusk.jpg',
+    mainImage: 'https://besthqwallpapers.com/Uploads/7-1-2019/76897/thumb2-emirates-stadium-arsenal-stadium-hdr-london-england.jpg',
     imageTwo: 'https://besthqwallpapers.com/Uploads/7-1-2019/76897/thumb2-emirates-stadium-arsenal-stadium-hdr-london-england.jpg',
     imageThree: 'https://i2-prod.football.london/incoming/article15400796.ece/ALTERNATES/s810/0_Emirates.jpg',
     latitude: 51.5566,
@@ -27,7 +27,7 @@ export const clubs = [
   },
   {
     clubName: 'Chelsea F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Chelsea_F.C.#/media/File:Chelsea_FC.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg',
     league: 'Premier League',
     mainImage: 'https://en.wikipedia.org/wiki/Stamford_Bridge_(stadium)#/media/File:Stamford_Bridge_Clear_Skies.JPG',
     imageTwo: 'https://thumbs.dreamstime.com/z/stamford-bridge-football-stadium-chelsea-club-%C3%AB%CB%86st%C3%A3%C2%A6mf%C3%A9%E2%84%A2rd-fulham-adjacent-to-borough-south-west-london-140656776.jpg',
@@ -40,7 +40,7 @@ export const clubs = [
   },
   {
     clubName: 'West Ham United F.C.',
-    logo: 'https://en.wikipedia.org/wiki/File:West_Ham_United_FC_logo.svg#/media/File:West_Ham_United_FC_logo.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg',
     league: 'Premier League',
     mainImage: 'https://commons.wikimedia.org/wiki/File:FloodlitLondonStadium.jpg#/media/File:FloodlitLondonStadium.jpg',
     imageTwo: 'https://i.guim.co.uk/img/media/b5a74239c20b53c025796a4f9886f7744518a73c/0_296_3500_2101/master/3500.jpg?width=620&quality=85&auto=format&fit=max&s=a520e9707cee7aa26468cedc5eb4c738',
@@ -53,7 +53,7 @@ export const clubs = [
   },
   {
     clubName: 'Brentford F.C',
-    logo: 'https://en.wikipedia.org/wiki/File:Brentford_FC_crest.svg#/media/File:Brentford_FC_crest.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg',
     league: 'Premier League',
     mainImage: 'https://en.wikipedia.org/wiki/Brentford_Community_Stadium#/media/File:Brentford_Community_Stadium_2020.jpg',
     imageTwo: 'https://www.stadia-magazine.com/wp-content/uploads/2020/09/AFL-Architects-Brentford-Stadium-14-cropped.jpg',
@@ -66,7 +66,7 @@ export const clubs = [
   },
   {
     clubName: 'Crystal Palace F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Crystal_Palace_F.C.#/media/File:Crystal_Palace_FC_logo.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Crystal_Palace_FC_logo.svg',
     league: 'Premier League',
     mainImage: 'https://en.wikipedia.org/wiki/Selhurst_Park#/media/File:Selhurst_Park_Holmesdale_Stand.jpg',
     imageTwo: 'https://selhurst-park.co.uk/wp-content/uploads/2019/04/stadium.jpg',
@@ -80,7 +80,7 @@ export const clubs = [
   {
     clubName: 'Fulham F.C.',
     league: 'Championship',
-    logo: 'https://en.wikipedia.org/wiki/Fulham_F.C.#/media/File:Fulham_FC_(shield).svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg',
     mainImage: 'https://en.wikipedia.org/wiki/Craven_Cottage#/media/File:Craven_Cottage_Football_Ground_-_geograph.org.uk_-_778731.jpg',
     imageTwo: 'https://footballtripper.com/wp-content/uploads/craven-cottage-cover.jpg',
     imageThree: 'https://e0.365dm.com/18/12/1600x900/skysports-fulham-football_4516539.jpg?20181212122950',
@@ -92,7 +92,7 @@ export const clubs = [
   },
   {
     clubName: 'Charlton Athletic F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Charlton_Athletic_F.C.#/media/File:CharltonBadge_30Jan2020.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/CharltonBadge_30Jan2020.png',
     league: 'League One',
     mainImage: 'https://en.wikipedia.org/wiki/The_Valley_(London)#/media/File:Charlton_Athletic_football_ground.jpg',
     imageTwo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/The_Valley_North_and_West_Stands.jpg',
@@ -105,7 +105,7 @@ export const clubs = [
   },
   {
     clubName: 'Watford F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Watford_F.C.#/media/File:Watford.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/e/e2/Watford.svg',
     league: 'Premier League',
     mainImage: 'https://en.wikipedia.org/wiki/Vicarage_Road#/media/File:Vicarage_Road_2015.jpg',
     imageTwo: 'https://www.watfordobserver.co.uk/resources/images/7304554.jpg?display=1&htype=0&type=responsive-gallery',
@@ -118,7 +118,7 @@ export const clubs = [
   },
   {
     clubName: 'Millwall F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Millwall_F.C.#/media/File:This_is_the_logo_for_Millwall_Football_Club.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/e/e7/This_is_the_logo_for_Millwall_Football_Club.png',
     league: 'Championship',
     mainImage: 'https://en.wikipedia.org/wiki/The_Den#/media/File:The_New_Den_-_geograph.org.uk_-_1143517.jpg',
     imageTwo: 'https://footballtripper.com/wp-content/uploads/the-den-cover.jpg',
@@ -131,7 +131,7 @@ export const clubs = [
   },
   {
     clubName: 'Queens Park Rangers F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Queens_Park_Rangers_F.C.#/media/File:Queens_Park_Rangers_crest.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/3/31/Queens_Park_Rangers_crest.svg',
     league: 'Championship',
     mainImage: 'https://en.wikipedia.org/wiki/Loftus_Road#/media/File:Loftus_Road_3.jpg',
     imageTwo: 'https://footballgroundguide.com/wp-content/uploads/2020/09/loftus-road-stadium-qpr-ellerslie-road-stand-1411644908.jpg',
@@ -140,11 +140,11 @@ export const clubs = [
     longitude: -0.2322,
     location: 'Shepherd\'s Bush, London',
     capacity: 18439,
-    stadiumInfo: 'Loftus Road, known as the Kiyan Prince Foundation Stadium since 2019, is an all-seater football stadium in White City, London, England, which is home to Queens Park Rangers. In 1981, it became the first stadium in British professional football to have an artificial pitch of Omniturf installed. This remained in use until 1988, after which a natural grass pitch was reintroduced.'
+    stadiumInfo: 'Loftus Road, known as the Kiyan Prince Foundation Stadium since 2019, is an all-seater football stadium in White City, London, England, which is home to Queens Park Rangers. In 1981, it became the first stadium in British professional football to have an artificial pitch of Omniturf installed. This remained in use until 1988, after which a natural grass pitch was reintroduced.',
   },
   {
     clubName: 'Leyton Orient F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Leyton_Orient_F.C.#/media/File:Leyton_Orient_F.C._logo.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/a/a8/Leyton_Orient_F.C._logo.svg',
     league: 'League Two',
     mainImage: 'https://en.wikipedia.org/wiki/Brisbane_Road#/media/File:Brisbane_Road.jpg',
     imageTwo: 'https://footballtripper.com/wp-content/uploads/brisbane-road-cover.jpg',
@@ -157,7 +157,7 @@ export const clubs = [
   },
   {
     clubName: 'AFC Wimbeldon',
-    logo: 'https://en.wikipedia.org/wiki/AFC_Wimbledon#/media/File:AFC_Wimbledon_(2020)_logo.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/1/1b/AFC_Wimbledon_%282020%29_logo.svg',
     league: 'League One',
     mainImage: 'https://en.wikipedia.org/wiki/Plough_Lane#/media/File:Plough_Lane_double_rainbow.jpg',
     imageTwo: 'https://ichef.bbci.co.uk/onesport/cps/976/cpsprodpb/02AF/production/_115178600_ploughlanetrevorwilliams.jpg',
@@ -170,7 +170,7 @@ export const clubs = [
   },
   {
     clubName: 'Barnet F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Barnet_F.C.#/media/File:Barnet_FC.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/a/a2/Barnet_FC.svg',
     league: 'National league',
     mainImage: 'https://en.wikipedia.org/wiki/The_Hive_Stadium#/media/File:The_Hive_Stadium_3.jpg',
     imageTwo: 'https://footballtripper.com/wp-content/uploads/hive-stadium-barnet.jpg',
@@ -183,7 +183,7 @@ export const clubs = [
   },
   {
     clubName: 'Stevenage F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Stevenage_F.C.#/media/File:Stevenage_Football_Club.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Stevenage_Football_Club.png',
     league: 'League Two',
     mainImage: 'https://en.wikipedia.org/wiki/Broadhall_Way#/media/File:Stevenagenight.jpg',
     imageTwo: 'https://www.stadiumguide.com/wp-content/uploads/stevenage_top.jpg',
@@ -196,7 +196,7 @@ export const clubs = [
   },
   {
     clubName: 'Luton Town F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Luton_Town_F.C.#/media/File:LutonTownFC2009.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/8/8b/LutonTownFC2009.png',
     league: 'Championship',
     mainImage: 'https://en.wikipedia.org/wiki/Kenilworth_Road#/media/File:Kenilworth_Road.jpg',
     imageTwo: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/17386/production/_108201159_gettyimages-656672884.jpg',
@@ -209,7 +209,7 @@ export const clubs = [
   },
   {
     clubName: 'MK Dons',
-    logo: 'https://en.wikipedia.org/wiki/Milton_Keynes_Dons_F.C.#/media/File:MK_Dons.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/b/bf/MK_Dons.png',
     league: 'League One',
     mainImage: 'https://en.wikipedia.org/wiki/Stadium_MK#/media/File:Stadium_MK.jpg',
     imageTwo: 'https://populous.com/wp-content/uploads/2018/01/POP_05_2913_20_stadiumMKAerial2.jpg',
@@ -222,7 +222,7 @@ export const clubs = [
   },
   {
     clubName: 'Southend United',
-    logo: 'https://en.wikipedia.org/wiki/Southend_United_F.C.#/media/File:Southend_United.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/7/79/Southend_United.svg',
     league: 'National league',
     mainImage: 'https://en.wikipedia.org/wiki/Roots_Hall#/media/File:Roots_Hall_2007.jpg',
     imageTwo: 'https://footballtripper.com/wp-content/uploads/roots-hall-cover.jpg',
@@ -235,7 +235,7 @@ export const clubs = [
   },
   {
     clubName: 'Gillingham F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Gillingham_F.C.#/media/File:FC_Gillingham_Logo.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/5/5e/FC_Gillingham_Logo.svg',
     league: 'League One',
     mainImage: 'https://en.wikipedia.org/wiki/Priestfield_Stadium#/media/File:Priestfield_Stadium_Medway_Stand.jpg',
     imageTwo: 'https://www.gillinghamfootballclub.com/contentassets/0dd7b99d8c764f8993fb7c3554d55c08/img-2688166-3255281_1600x900/Large',
@@ -248,7 +248,7 @@ export const clubs = [
   },
   {
     clubName: 'Reading F.C.',
-    logo: 'https://en.wikipedia.org/wiki/Reading_F.C.#/media/File:Reading_FC.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/1/11/Reading_FC.svg',
     league: 'Championship',
     mainImage: 'https://en.wikipedia.org/wiki/Madejski_Stadium#/media/File:Madejski_Stadium_aerial,_August_2014_(cropped).jpg',
     imageTwo: 'https://i2-prod.getreading.co.uk/incoming/article16696312.ece/ALTERNATES/s810/0_EG_BRK_BK201915177_0006JPG.jpg',
