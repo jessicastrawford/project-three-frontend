@@ -1,5 +1,5 @@
 // import { useHistory } from 'react-router'
-import 'materialize-css'
+// import 'materialize-css'
 // import { Slider, Slide, Caption } from 'react-materialize'
 import React from 'react'
 // import ReactDom from 'react-dom'
@@ -57,8 +57,6 @@ function Home() {
           <Signup></Signup>
         </div>
       </section>
-
-      <Footer />
     </>
 
   )

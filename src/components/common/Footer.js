@@ -6,7 +6,8 @@ function Footer() {
   return (
     <footer>
       <div className="footer-container">
-        <Link to="/about">Meet the team behind Away Days</Link>
+        <br/>
+        <Link to="/about" className="team">Meet the team behind Away Days</Link>
         <hr/>
         <div className="icons">
           <div>
@@ -43,23 +44,8 @@ function Footer() {
           </div>
         </div>
       </div>
-
-
     </footer>
   )
 }
 
 export default Footer
-
-
-// <ul>
-// <li>
-//   <a href='#'><i className="fab fa-facebook-f"></i></a>
-// </li>
-// <li>
-//   <a href='#'><i className="fab fa-twitter"></i></a>
-// </li>
-// <li>
-//   <a href='#'><i className="fab fa-instagram"></i></a>
-// </li>
-// </ul>
