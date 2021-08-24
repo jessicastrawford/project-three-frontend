@@ -7,6 +7,7 @@ import ClubsIndex from './components/clubs/ClubsIndex'
 import Login from './auth/Login'
 import Register from './auth/Register'
 import InteractiveMap from './components/maps/InteractiveMap'
+import About from './components/common/About'
 // import './App.scss'
 
 
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path="/map">
           <InteractiveMap />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
       </Switch>
     </BrowserRouter>
