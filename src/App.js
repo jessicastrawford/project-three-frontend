@@ -7,13 +7,9 @@ import ClubsIndex from './components/clubs/ClubsIndex'
 import Login from './auth/Login'
 import Register from './auth/Register'
 import InteractiveMap from './components/maps/InteractiveMap'
-<<<<<<< HEAD
-import Footer from './components/common/Footer'
-=======
 import About from './components/common/About'
 // import './App.scss'
 
->>>>>>> development
 
 function App() {
   return (
