@@ -49,3 +49,16 @@ function Footer() {
 }
 
 export default Footer
+
+
+// <ul>
+// <li>
+//   <a href='#'><i className="fab fa-facebook-f"></i></a>
+// </li>
+// <li>
+//   <a href='#'><i className="fab fa-twitter"></i></a>
+// </li>
+// <li>
+//   <a href='#'><i className="fab fa-instagram"></i></a>
+// </li>
+// </ul>
