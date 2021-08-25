@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/common/Navbar'
 import Home from './components/common/Home'
 import ClubsIndex from './components/clubs/ClubsIndex'
-import ClubShow from './components/clubs/clubShow'
+import ClubShow from './components/clubs/ClubShow'
 import Login from './auth/Login'
 import Register from './auth/Register'
 import InteractiveMap from './components/maps/InteractiveMap'
@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/clubs">
+        <Route exact path="/clubs">
           <ClubsIndex />
         </Route>
         <Route path="/clubs/:clubId">
