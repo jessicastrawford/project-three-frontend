@@ -1,5 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+// import axios from 'axios'
+
+// import { clubs } from '../../data/clubs'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 function ClubsIndex() {
   const [clubs, setClubs] = React.useState(null)
@@ -59,15 +64,20 @@ function ClubsIndex() {
             </select>
           </div>
         </div>
+
+        
         <div className="club-card-container">
           {isLoading && <div>Loading....</div>} 
-          {!isLoading && filteredClubs().map(club => (
-            <div key={club._id} className="club-card">
-              <h3>{club.clubName}</h3>
-              <img src={club.logo}/>
-            </div>
+          {!isLoading && filteredClubs().map(club => ( 
+            <Link to={`/clubs/${club._id}`} key={club._id}>
+              <div className="club-card">
+                <h3>{club.clubName}</h3>
+                <img src={club.logo}/>
+              </div>
+            </Link>
           ))}
         </div>
+        
       </div>
     </section>
   )

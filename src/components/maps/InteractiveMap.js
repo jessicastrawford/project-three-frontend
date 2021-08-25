@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import ReactPlayer from 'react-player'
+
 
 function InteractiveMap() {
   const [data, setData] = React.useState(null)
@@ -20,12 +22,31 @@ function InteractiveMap() {
 
   console.log(filteredLeague)
 
-  filteredLeague?.map(item => {
-    console.log(item.videos)
+  const videos = filteredLeague?.map(item => {
+    return item.videos.map(video => video.embed)
   })
+  console.log(videos)
+
+  const videoUrls = videos?.map(clip => {
+    console.log(clip)
+    const start = clip[0].split('src=\'')[1]
+    return start.split('\'')[0]
+  })
+  console.log(videoUrls)
 
   return (
-    <h1>This is the interactive map page</h1>
+    <>
+      {videoUrls?.map(video => {
+        return <ReactPlayer 
+          key={video} 
+          url={video} 
+          width={500}
+          height={500}
+          controls={true}
+        />
+      })}
+    </>
+    
   )
 }
 

@@ -12,15 +12,15 @@ const baseUrl = '/api'
 
 // Auth Requests
 export function registerUser(formData) {
-  return axios.post('api/register', formData)
+  return axios.post('/api/register', formData)
 }
 
 export function loginUser(formData) {
-  return axios.post('api/login', formData)
+  return axios.post('/api/login', formData)
 }
 
 export function showUserProfile() {
-  return axios.get('api/profile/', headers())
+  return axios.get('/api/profile/', headers())
 }
 
 
