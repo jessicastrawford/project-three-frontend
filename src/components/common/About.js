@@ -10,7 +10,7 @@ function About() {
 
         <div className="team-social-media">
           <div className="individual-social-media">
-            <h2>Nnanna Uwakwa</h2>
+            <h2>Nnanna Uwakwe</h2>
             <SocialIcon url="https://github.com/chikin-namban92"/>
             <SocialIcon url="https://www.linkedin.com/in/nnanna-uwakwe-b78a731/"/>
           </div>
