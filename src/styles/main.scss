@@ -235,9 +235,42 @@ body {
           border-bottom-right-radius: 20px;
         }
       }
+    }
+
+    .club-info{
+      display: flex;
+      margin-top: 40px;
+      // justify-content: space-between;
+
+      p{
+        width: 770px;
+        padding-bottom: 5px;
+      }
+
+      .club-info-image img{
+        width: 190px;
+      }
+      .club-info-text{
+        margin-left: 100px;
+        margin-top: 15px;
+        
+      }
 
     }
 }
+
+// Pub Show Page
+
+.favourites {
+  .likeBtn{
+    height: 38px;
+    padding: 0 30px;
+    font-size: 11px;
+    background-color: transparent;
+    border-radius: 6px;
+  }
+}
+
 
 // Register & Login 
 
