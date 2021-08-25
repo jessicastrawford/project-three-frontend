@@ -55,12 +55,14 @@ function Register() {
 
   return (
     
-    <section className="section login-box animate__animated animate__fadeInUp" onSubmit={handleSubmit}>
+    <section className="section register-box animate__animated animate__fadeInUp" onSubmit={handleSubmit}>
       <div>
         <h1>Please Sign Up Below</h1>
+        <hr/>
       </div>
-      <div>
-        <input className={`login-input ${errors.username ? 'is-danger' : ''}`}
+      <div className="register-top">
+        <input 
+          className="register-input"
           placeholder="Please enter your username here"
           name="username"
           value={formData.username}
@@ -69,19 +71,19 @@ function Register() {
           <p className="help is-danger">username error</p>
         )}
       </div>
-      <div className="sign-up-input-box-middle">
+      <div className="register-middle">
         <input
-          className={`login-input ${errors.email ? 'is-danger' : ''}`}
-          placeholder="Please enter your email address here"
+          className="register-input"
+          placeholder="Please enter your email"
           name="email"
           value={formData.email}
           onChange={handleChange}
         />
         {errors.email && <p className="help is-danger">email error</p>}
       </div>
-      <div className="sign-up-input-box-middle">
+      <div className="register-middle">
         <input
-          className={`login-input ${errors.password ? 'is-danger' : ''}`}
+          className="register-input"
           type={passwordShown ? 'text' : 'password'}
           placeholder="Please enter your password here"
           name="password"
@@ -93,9 +95,9 @@ function Register() {
           <p className="help is-danger">password error</p>
         )}
       </div>
-      <div className="login-input-box-pass">
+      <div className="register-bottom">
         <input
-          className={`login-input ${errors.passwordConfirmation ? 'is-danger' : ''}`}
+          className="register-input"
           type={passwordShown ? 'text' : 'password'}
           placeholder="Please enter your password again"
           name="passwordConfirmation"
@@ -106,6 +108,11 @@ function Register() {
         {errors.passwordConfirmation && (
           <p className="help is-danger">password confirmation error</p>
         )}
+      </div>
+      <div className="register-info">
+        <p>
+          We&apos;ll email you to confirm your email address. <span>Privacy Policy</span>
+        </p>
       </div>
       <div className="field">
         <button type="submit" className="button login-button is-fullwidth" onClick={handleSubmit}>Sign up</button>
