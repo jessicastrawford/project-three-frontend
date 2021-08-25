@@ -51,11 +51,11 @@ export function editClub(clubId, formData) {
 
 
 export function getAllPubs() {
-  return axios.get('/api/pubs')
+  return axios.get(`${baseUrl}/pubs`)
 }
 
-export function getSinglePub(pubId) {
-  return axios.get(`/pubs/${pubId}`)
+export function getSinglePub(clubId, pubId) {
+  return axios.get(`${baseUrl}/clubs/${clubId}/pubs/${pubId}`)
 }
 
 export function createPub(formdata) {
