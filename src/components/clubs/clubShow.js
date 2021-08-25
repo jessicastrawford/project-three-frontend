@@ -72,15 +72,21 @@ function ClubShow () {
             </div>
           </div>
         </div>
-      </div>
         
-      <div className="club-info">
-        <div>
-          <h3>League: {league}</h3>
-          <p>Stadium Capacity: {capacity}</p>
+        <div className="club-info">
+          <div className="club-info-image">
+            <img src={logo}/>
+          </div>
+          <div className="club-info-text">
+            <h3>League: {league}</h3>
+            <p>Stadium Capacity: {capacity}</p>
+            <p className="stadium-info">Stadium Information: {stadiumInfo}</p>
+            <hr/>
+          </div>
         </div>
-        <img src={logo}/>
-        <p>Stadium Information: {stadiumInfo}</p>
+      </div>
+      <div>
+        <h3>Where you&apos;ll be</h3>
       </div>
 
 

@@ -10,6 +10,7 @@ import InteractiveMap from './components/maps/InteractiveMap'
 import About from './components/common/About'
 import Footer from './components/common/Footer'
 import ClubShow from './components/clubs/ClubShow'
+import PubShow from './components/pubs/PubsShow'
 // import './App.scss'
 
 
@@ -20,6 +21,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/clubs/:clubId/pubs/:pubId">
+          <PubShow />
         </Route>
         <Route exact path="/clubs">
           <ClubsIndex />
