@@ -9,6 +9,7 @@ import Register from './auth/Register'
 import InteractiveMap from './components/maps/InteractiveMap'
 import About from './components/common/About'
 import Footer from './components/common/Footer'
+import ClubShow from './components/clubs/ClubShow'
 // import './App.scss'
 
 
@@ -20,8 +21,11 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/clubs">
+        <Route exact path="/clubs">
           <ClubsIndex />
+        </Route>
+        <Route path="/clubs/:clubId">
+          <ClubShow />
         </Route>
         <Route path="/login">
           <Login />
