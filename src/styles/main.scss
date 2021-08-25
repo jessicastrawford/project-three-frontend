@@ -58,6 +58,7 @@ body {
 
 .navbar{
   height: 80px;
+  // display: block;
   // position: fixed;
   top:0;
   width: 100%;
@@ -68,14 +69,21 @@ body {
   //   border-radius: 10px;
   //   padding-right: 20px;
   //   padding-left: 20px;
+
+  //   a{
+  //     font-family: 'Nunito', sans-serif;
+  //     color: black;
+  //   }
   // }
   // .navbar-brand{
   //   background-color: white;
   //   border-radius: 10px;
   //   height: 30px;
+  //   z-index: auto;
   // }
+  
+  }
 
-}
 
 .navbarMove {
   background: pink;
@@ -83,7 +91,10 @@ body {
 
 .navbarMove.active{
   background: orange;
+
 }
+
+
 
 .logo {
   width: 100%;
@@ -118,7 +129,7 @@ body {
 
   .info-text{
     text-align: end;
-    padding-top: 340px;
+    padding-top: 335px;
     padding-right: 50px;
     color: white;
 
@@ -142,6 +153,86 @@ body {
     width: 1000px;
 }
 
+// Pub Cards
+
+.pub-cards{
+  display: flex;
+  width: 350px;
+
+  .pub-card{
+    padding-bottom: 80px;
+
+    img {
+      height: 300px;
+      width: 300px;
+      border-radius: 10px;
+      object-fit:cover;      
+    }
+    h1.title {
+      font-size: 20px;
+      text-decoration: none !important;
+      color: black;
+    }
+  }
+}
+
+.pub-image{
+  transition: 0.3s;
+}
+
+.pub-image:hover{
+  // transform:scale(1.1);
+  opacity:0.5;
+  transform: translate(0, -10px);
+}
+
+// Register & Login 
+
+.register-box{
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid black;
+  width: 450px;
+  padding: 40px 0px;
+
+  .register-input{
+    // margin:10px;
+    padding: 15px 70px;
+    text-align: center;
+  }
+
+  .register-top{
+    border-top-left-radius: 15px;
+  }
+
+  .register-bottom{
+    border-bottom-left-radius: 15px;
+  }
+
+  .button{
+    background-color: white;
+    border: 1px solid black;
+    padding: 12px 20px 12px 20px;
+    border-radius: 10px;
+  }
+
+  i{
+    position:absolute;
+    left: 58%
+  }
+
+  i:hover{
+    color:red;
+    cursor: pointer;
+  }
+  .register-info{
+    span{
+      text-decoration: underline;
+    }
+  }
+
+}
+
 // Footer
 
 footer{
@@ -152,6 +243,19 @@ footer{
     color:black;
     margin-top: 70px;
     background-color: #f7f7f7;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    // position: absolute;
+    // left: 0;
+    // bottom: 0;
+    // right: 0;
+    // align-content: space-evenly;
+
+    a.team{
+      padding-top: 30px;
+      font-size: 30px;
+    }
 
     hr{
       width: 1000px;
@@ -167,20 +271,41 @@ footer{
     .icons{
       display: flex;
       justify-content: center;
+
+      ul{
+        font-family: 'Nunito', sans-serif;
+        list-style: none;
+        display: flex;
+    
+        li{
+          padding:10px;
+        }
     }
-    ul{
-      font-family: 'Nunito', sans-serif;
-      list-style: none;
-      display: flex;
-  
-      li{
-        padding:10px;
-      }
+    .social-container{
+      font-size: 20px;
+    }
+    }
+ 
   }
 
+}
+
+// About- Social Media Page
+
+.about{
+  h1{
+    text-align: center;
+    margin-top: 50px;
   }
-  // .social-media-icons {
-  // }
+  .team-social-media{
+    display: flex;
+    justify-content: center;
+  }
+  .individual-social-media{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 // Loading Annimation
@@ -263,22 +388,4 @@ footer{
   }
 }
 
-// .navbar {
-//   background-color: lightblue;
-  
-// //   ul{
-// //     display: flex;
-// //     justify-content: space-between;
-// //     width: 350px;
-// //     list-style: none;
-// //     text-decoration: none;
-    
-// //     li{
-// //       text-decoration: none;
-// //     }
-// //   }
-// }
 
-// body {
-//   margin: 0 auto;
-// }
