@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 // import axios from 'axios'
 
 import { clubs } from '../../data/clubs'
@@ -38,7 +39,9 @@ function ClubsIndex() {
           {clubs.map(club => (
             <div key={club.clubName} className="club-card">
               <h3>{club.clubName}</h3>
-              <img src={club.logo}/>
+              <Link to='/clubs/:clubId'>
+                <img src={club.logo}/>
+              </Link>        
             </div>
           ))}
         </div>

@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { getToken } from './auth'
 
+const baseUrl = 'baseurl": "localhost:4000/api'
+
 function headers() {
   return {
     headers: { Authorization: `Bearer ${getToken()}` },
@@ -19,6 +21,15 @@ export function loginUser(formData) {
 
 export function showUserProfile() {
   return axios.get('api/profile/', headers())
+}
+
+// Club Requests
+export function getAllClubs() {
+  return axios.get(`${baseUrl}/clubs`)
+}
+
+export function getSingleClub() {
+  return axios.get(`${baseUrl}/clubs/:clubId`)
 }
 
 // Pub Requests
