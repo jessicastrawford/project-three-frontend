@@ -186,6 +186,53 @@ body {
   transform: translate(0, -10px);
 }
 
+// Register & Login 
+
+.register-box{
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid black;
+  width: 450px;
+  padding: 40px 0px;
+
+  .register-input{
+    // margin:10px;
+    padding: 15px 70px;
+    text-align: center;
+  }
+
+  .register-top{
+    border-top-left-radius: 15px;
+  }
+
+  .register-bottom{
+    border-bottom-left-radius: 15px;
+  }
+
+  .button{
+    background-color: white;
+    border: 1px solid black;
+    padding: 12px 20px 12px 20px;
+    border-radius: 10px;
+  }
+
+  i{
+    position:absolute;
+    left: 58%
+  }
+
+  i:hover{
+    color:red;
+    cursor: pointer;
+  }
+  .register-info{
+    span{
+      text-decoration: underline;
+    }
+  }
+
+}
+
 // Footer
 
 footer{
