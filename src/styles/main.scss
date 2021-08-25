@@ -186,6 +186,59 @@ body {
   transform: translate(0, -10px);
 }
 
+// Club Show Page
+
+.club-show-page {
+
+  .top-half{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top:60px;
+    
+  }
+  
+  .title h1{
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 5px;
+ 
+  }
+    .gallery{
+      display: flex;
+      justify-content: center;
+
+      .main-image img{
+        width: 697px;
+        height: 697px;
+        object-fit:cover;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+
+      .smaller-images img{
+        width: 340px;
+        height: 340px;
+        object-fit: cover;
+      }
+
+      .left-side{
+        padding-right: 9px;
+      }
+      .right-side{
+        padding-left: 9px;
+
+        .first {
+          border-top-right-radius: 20px;
+        }
+        .second {
+          border-bottom-right-radius: 20px;
+        }
+      }
+
+    }
+}
+
 // Register & Login 
 
 .register-box{
