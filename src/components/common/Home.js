@@ -4,7 +4,7 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 import Signup from './Signup'
 // import { Link, useParams } from 'react-router-dom'
 
-import { pubs } from '../../data/pubs'
+// import { pubs } from '../../data/pubs'
 import { getAllPubs } from '../../lib/api'
 import PubHomepageCard from '../pubs/PubHomepageCard'
 
@@ -16,32 +16,51 @@ import image4 from '../../assets/4.jpeg'
 
 function Home() {
 
-  // const [pubs, setPubs] = React.useState([])
+  const [pubs, setPubs] = React.useState([])
 
-  // React.useEffect(() => {
-  //   const getData = async () => {
-  //     try {
-  //       const { data } = await getAllPubs()
-  //       const filteredPubs = data.filter(pub => {
-  //         const highestRated = pub.userRating >= 4
-  //         return highestRated
-  //       })
-  //       console.log(data)
-  //       console.log(filteredPubs)
-  //       setPubs(filteredPubs)
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   getData()
-  // }, [])
+  React.useEffect(() => {
+    const getData = async () => {
+      const response = await getAllPubs()
+      console.log(response.data)
+      return response.data.map(pub => {
+        console.log(pub)
+      })
+
+      // clubData.forEach(club => {
+      //   club.addedBy = admin
+      //   const commentText = faker.lorem.sentence()
+      //   const commentRating = Math.ceil(Math.random() * 5)
+      //   club.pubs.map(pub => {
+      //     pub.comments.push({
+      //       text: commentText,
+      //       rating: commentRating,
+      //       addedBy: createdUsers[Math.ceil(Math.random() * 99)],
+      //     })
+      //   })
+      // })
+      // console.log(filteredPubs)
+      // try {
+      //   const res = await getAllPubs()
+      //   const filteredPubs = data.filter(pub => {
+      //     const highestRated = pub.userRating >= 4
+      //     return highestRated
+      //   })
+      //   console.log(data)
+      //   console.log(filteredPubs)
+      //   setPubs(filteredPubs)
+      // } catch (err) {
+      //   console.log(err)
+      // }
+    }
+    getData()
+  }, [])
 
 
-  const filteredPubs = pubs.filter(pub => {
-    const highestRated = pub.userRating >= 4
-    return highestRated
-  })
-  console.log(filteredPubs)
+  // const filteredPubs = pubs.filter(pub => {
+  //   const highestRated = pub.userRating >= 4
+  //   return highestRated
+  // })
+  console.log(pubs)
 
   return (
     <>
@@ -62,9 +81,9 @@ function Home() {
           <h3>Top 5 Rated Pubs</h3>
         </div>
         <div className="pub-cards">
-          {filteredPubs.map(pub => (
+          {/* {pubs.map(pub => (
             <PubHomepageCard key={pub._id} pub={pub} />
-          ))}
+          ))} */}
         </div>
       </section>
       <section className="sign-up">
