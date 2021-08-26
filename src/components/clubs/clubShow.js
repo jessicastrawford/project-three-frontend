@@ -1,9 +1,11 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import ReactMapGL from 'react-map-gl'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart, faUpload } from '@fortawesome/free-solid-svg-icons'
   
     
-import { useParams, useHistory } from 'react-router-dom'
+// import { useParams, useHistory } from 'react-router-dom'
 import { getSingleClub } from '../../lib/api'
 import PubClubCard from '../pubs/PubClubCard'
 
@@ -48,17 +50,10 @@ function ClubShow () {
     location, 
     capacity, 
     stadiumInfo, 
-    // latitude, 
-    // longitude,
+    latitude, 
+    longitude,
   } = club 
 
-
-
-  // if (isAuthenticated()) {
-  //   React.useEffect(() => {
-  //     const { data } = await 
-  //   })
-  // } 
 
 
   return (
@@ -68,6 +63,13 @@ function ClubShow () {
           <div className="title">
             <h1>{clubName}</h1>
             <p><u>Location: {location}</u></p>
+          </div>
+          <div className="favourites">
+            <FontAwesomeIcon icon={faHeart} />
+          </div>
+          <div className="share">
+            <FontAwesomeIcon icon={faUpload} />
+            <p><u>Share</u></p>
           </div>
           <div className="gallery"> 
             <div className="main-image">
@@ -97,6 +99,12 @@ function ClubShow () {
             <hr/>
           </div>
         </div>
+      </div>
+      <div className="pubs">
+        <PubClubCard key={clubPubs._id} pub={ clubPubs } clubId = {clubId}/>
+      </div>
+      <div>
+        <h3>Where you&apos;ll be</h3>
         <div className="map-container">
           <ReactMapGL
             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
@@ -108,12 +116,6 @@ function ClubShow () {
             zoom={15}
           />
         </div>
-      </div>
-      <div className="pubs">
-        <PubClubCard key={clubPubs._id} pub={ clubPubs } clubId = {clubId}/>
-      </div>
-      <div>
-        <h3>Where you&apos;ll be</h3>
       </div>
 
 

@@ -371,9 +371,27 @@ body {
   .pub-card{
     .title-icons{
       display: flex;
+      h1{
+        font-weight: bold;
+        margin-top: 60px;
+        padding-bottom: 20px;
+        color: #454545;
+      }
+
+      p{
+        color:#454545;
+      }
+
       .icons{
         display: flex;
+        justify-content: space-between;
+        width: 60px;
+
+        div{
+          padding-right:15px;
+        }
       }
+
     }
   }
 .button{
@@ -395,15 +413,6 @@ body {
   align-items: center;
 }
 
-// .favourites {
-//   .likeBtn{
-//     height: 38px;
-//     padding: 0 30px;
-//     font-size: 11px;
-//     background-color: transparent;
-//     border-radius: 6px;
-//   }
-// }
 
 
 // Register & Login 

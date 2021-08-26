@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faUpload,
   faHeart } from '@fortawesome/free-solid-svg-icons'
+import ReactMapGL from 'react-map-gl'
 
 
 function PubShow () {
@@ -46,8 +47,8 @@ function PubShow () {
     pubName,
     // comments,
     userRating,
-    // latitude,
-    // longitude,
+    latitude,
+    longitude,
     description, 
     image,
   } = pub
@@ -60,14 +61,31 @@ function PubShow () {
         <div className="title-icons">
           <h1>{pubName}</h1>
           <div className="icons">
-            <FontAwesomeIcon icon={faHeart} />
-            <FontAwesomeIcon icon={faUpload} />
-            <p><u>Share</u></p>
+            <div>
+              <FontAwesomeIcon icon={faHeart} />
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faUpload} />
+            </div>
+            <div>
+              <p><u>Share</u></p>
+            </div>
           </div>
         </div>
         <figure className="image">
           <img src={image} alt={pubName}/>
         </figure>
+        <div className="map-container">
+          <ReactMapGL
+            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+            height="100%"
+            width="100%"
+            mapStyle="mapbox://styles/mapbox/streets-v11"
+            latitude={latitude}
+            longitude={longitude}
+            zoom={15}
+          />
+        </div>
       </div>
       <hr />
       <p>{description}</p>

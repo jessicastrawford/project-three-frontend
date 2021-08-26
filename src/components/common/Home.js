@@ -35,11 +35,20 @@ function Home() {
     }
     getData()
   }, [])
-      const response = await getAllPubs()
-      console.log(response.data)
-      return response.data.map(pub => {
-        console.log(pub)
-      })
+
+//   React.useEffect(() => {
+//     const response = await getAllPubs()
+//     console.log(response.data)
+//     return response.data.map(pub => {
+//       console.log(pub)
+//     })
+
+//   })
+
+// }
+// getData()
+// }, [])
+
 
       // clubData.forEach(club => {
       //   club.addedBy = admin
@@ -66,10 +75,6 @@ function Home() {
       // } catch (err) {
       //   console.log(err)
       // }
-    }
-    getData()
-  }, [])
-
 
   // const filteredPubs = pubs.filter(pub => {
   //   const highestRated = pub.userRating >= 4

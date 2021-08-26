@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import ReactStars from 'react-star-rating-component'
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
+
 
 function PubHomepageCard( { pub, clubId } ) {
 
@@ -20,7 +19,6 @@ function PubHomepageCard( { pub, clubId } ) {
                     <img src={pub.image} alt={pub.pubName} />
                   </figure>
                   <h3>{pub.pubName}</h3>
-                  <FontAwesomeIcon icon={faHeart} />
                   <ReactStars
                     count={5}
                     size={20}
