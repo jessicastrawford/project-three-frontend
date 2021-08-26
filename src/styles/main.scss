@@ -576,6 +576,12 @@ footer{
   50% { transform: scaleX(1); opacity: .8;}
   100% {}
 }
+
+.map-container {
+  width: 697px;
+  height: 500px;
+}
+
 .club-index-wrapper {
   display: flex;
   flex-direction: column;
