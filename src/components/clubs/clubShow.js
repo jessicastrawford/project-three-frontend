@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactMapGL from 'react-map-gl'
   
     
 import { useParams, useHistory } from 'react-router-dom'
@@ -10,10 +11,14 @@ import { getSingleClub } from '../../lib/api'
 function ClubShow () {
   const [club, setClub] = React.useState('')
   // const [user, setUser] = React.useState(null)
+  // const [] = React.useState({
+
+  // })
 
   const { clubId } = useParams()
   // const history = useHistory()
   // const isLoggedIn = isAuthenticated()
+
 
   React.useEffect(() => {
     const getData = async () => {
@@ -85,6 +90,17 @@ function ClubShow () {
             <p className="stadium-info">Stadium Information: {stadiumInfo}</p>
             <hr/>
           </div>
+        </div>
+        <div className="map-container">
+          <ReactMapGL
+            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+            height="100%"
+            width="100%"
+            mapStyle="mapbox://styles/mapbox/streets-v11"
+            latitude={latitude}
+            longitude={longitude}
+            zoom={15}
+          />
         </div>
       </div>
       <div>
