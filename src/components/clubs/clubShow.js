@@ -1,30 +1,20 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
 import ReactMapGL from 'react-map-gl'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faUpload } from '@fortawesome/free-solid-svg-icons'
-  
-    
-import { useParams, useHistory } from 'react-router-dom'
-import { getSingleClub, showUserProfile } from '../../lib/api'
-import Favorites from '../user/Favorites'
-// import { isAuthenticated, getPaylod, isOwner } from '../../lib/auth'
-// import Loading from '../common/Loading'
 
+import { useParams } from 'react-router-dom'
+
+import { getSingleClub } from '../../lib/api'
+import PubClubCard from '../pubs/PubClubCard'
 
 function ClubShow () {
   const [club, setClub] = React.useState('')
-
+  // const [user, setUser] = React.useState(null)
+  // const [] = React.useState({
   // })
-  // const [viewport, setViewport] = React.useState({
-  //   latitude: 51.0,
-  //   longitude: 0.0,
-  //   zoom: 15,
-  // })
-
   const { clubId } = useParams()
-
-
+  console.log(clubId)
   React.useEffect(() => {
     console.log('Hello')
     const getData = async () => {
@@ -37,13 +27,11 @@ function ClubShow () {
     }
     getData()
   }, [clubId])
-
  
   console.log(club)
   const clubPubs = club.pubs === undefined ? '' : club?.pubs.map(pub => {
     return pub 
   }) 
-
   const { 
     clubName, 
     logo, 
@@ -56,22 +44,7 @@ function ClubShow () {
     stadiumInfo, 
     latitude, 
     longitude,
-    addedBy } = club 
-
-  const handleFavorite = async (e) => {
-    try {
-      const currentUser = await Favorites()
-      if (e.target.value) {
-        console.log(currentUser)
-      }
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-
-
-
+  } = club 
 
   return (
     <section className="club-show-page">
@@ -79,11 +52,6 @@ function ClubShow () {
         <div className="club-gallery-title">
           <div className="title">
             <h1>{clubName}</h1>
-            <div className="favourites">
-              <button className="likeBtn" onClick={handleFavorite}>
-                <i className="fas fa-heart fa-lg" style={{ color: 'grey' }}>Add to Favorites</i>
-              </button>
-            </div>
             <p><u>Location: {location}</u></p>
           </div>
           <div className="favourites">
@@ -139,10 +107,7 @@ function ClubShow () {
           />
         </div>
       </div>
-
-
     </section>
   )
 }
-
 export default ClubShow
