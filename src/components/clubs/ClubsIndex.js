@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import axios from 'axios'
 
-// import { clubs } from '../../data/clubs'
 import axios from 'axios'
 
 function ClubsIndex() {

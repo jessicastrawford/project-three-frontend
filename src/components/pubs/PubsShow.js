@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { getSinglePub } from '../../lib/api'
 import ReactStars from 'react-star-rating-component'
+import ReactMapGL from 'react-map-gl'
 
 
 function PubShow () {
@@ -34,6 +35,10 @@ function PubShow () {
     image,
   } = pub
 
+  const handleClick = (e) => {
+    console.log('Clicked')
+  }
+
   return (
     <section>
       <div className="favourites">
@@ -48,6 +53,17 @@ function PubShow () {
       </div>
       <h1>{pubName}</h1>
       <p>{description}</p>
+      <div className="map-container">
+        <ReactMapGL
+          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+          height="100%"
+          width="100%"
+          mapStyle="mapbox://styles/mapbox/streets-v11"
+          latitude={latitude}
+          longitude={longitude}
+          zoom={15}
+        />
+      </div>
       <ReactStars 
         count={5}
         size={20}
@@ -61,7 +77,7 @@ function PubShow () {
         <div>
         </div>
         <div>
-          <button className="button">
+          <button className="button" onClick={handleClick}>
             Add Your Review
           </button>
         </div>

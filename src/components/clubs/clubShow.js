@@ -1,23 +1,22 @@
 import React from 'react'
-import ReactMapGL from 'react-map-gl'
+import ReactMapGL, { Marker } from 'react-map-gl'
   
     
 import { useParams, useHistory } from 'react-router-dom'
 import { getSingleClub } from '../../lib/api'
-// import { isAuthenticated, getPaylod, isOwner } from '../../lib/auth'
-// import Loading from '../common/Loading'
 
 
 function ClubShow () {
   const [club, setClub] = React.useState('')
-  // const [user, setUser] = React.useState(null)
-  // const [] = React.useState({
 
+  // })
+  // const [viewport, setViewport] = React.useState({
+  //   latitude: 51.0,
+  //   longitude: 0.0,
+  //   zoom: 15,
   // })
 
   const { clubId } = useParams()
-  // const history = useHistory()
-  // const isLoggedIn = isAuthenticated()
 
 
   React.useEffect(() => {
@@ -91,23 +90,21 @@ function ClubShow () {
             <hr/>
           </div>
         </div>
-        <div className="map-container">
-          <ReactMapGL
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
-            height="100%"
-            width="100%"
-            mapStyle="mapbox://styles/mapbox/streets-v11"
-            latitude={latitude}
-            longitude={longitude}
-            zoom={15}
-          />
-        </div>
       </div>
       <div>
         <h3>Where you&apos;ll be</h3>
       </div>
-
-
+      <div className="map-container">
+        <ReactMapGL
+          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+          height="100%"
+          width="100%"
+          mapStyle="mapbox://styles/mapbox/streets-v11"
+          latitude={latitude}
+          longitude={longitude}
+          zoom={15}
+        />
+      </div>
     </section>
   )
 }
