@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { getSinglePub, getAllComments, getSingleClub, likePub } from '../../lib/api'
+import { getSinglePub, getAllComments, getSingleClub, likePub, createAComment } from '../../lib/api'
 import ReactStars from 'react-star-rating-component'
 import ReviewCard from '../reviews/ReviewCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,12 +10,35 @@ import {
 import ReactMapGL from 'react-map-gl'
 import { isAuthenticated } from '../../lib/auth'
 
+const initialState = {
+  addedBy: '',
+  createdAt: '',
+  text: '',
+  rating: '',
+}
+
 
 function PubShow () {
   const [pub, setPub] = React.useState('')
   const [pubReviews, setPubReviews] = React.useState([])
+  // let isClicked = false
+  const [isClicked, setIsClicked] = React.useState(false)
+  const [formData, setFormData] = React.useState(initialState)
 
   const { clubId, pubId } = useParams()
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    window.alert(`Submitting ${JSON.stringify(formData, null, 2)}`)
+  }
+  
+  const handleChange = (e) => {
+    e.preventDefault()
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+    // setFormErrors({ ...formErrors, [e.target.name]: '' })
+  }
+
 
 
   React.useEffect(() => {
@@ -70,71 +93,106 @@ function PubShow () {
     }
   }
   
+  const handleClick = (e) => {
+    e.preventDefault()
+    setIsClicked(true)
+    
+  }
 
   return (
-    <section className="pub-show-page">
-      <div className="pub-card">
-        <div className="title-icons">
-          <h1>{pubName}</h1>
-          <div className="icons">
-            <div className="favourites" onClick={toggleLike} >
-              <FontAwesomeIcon icon={faHeart} />
+    <>
+      <section className="pub-show-page">
+        <div className="pub-card">
+          <div className="title-icons">
+            <div className="icons">
+              <div className="icon favourites" onClick={toggleLike}>
+                <FontAwesomeIcon icon={faHeart} />
+              </div>
+              <div className="icon">
+                <FontAwesomeIcon icon={faUpload} />
+              </div>
+              <div className="share">
+                <p><u>Share</u></p>
+              </div>
             </div>
-            <div>
-              <FontAwesomeIcon icon={faUpload} />
+          </div>
+          <div className="box-section">
+            <div className="title-and-image">
+              <h1>{pubName}</h1>
+              <figure className="image">
+                <img src={image} alt={pubName}/>
+              </figure>
             </div>
-            <div>
-              <p><u>Share</u></p>
+            <div className="map-container">
+              <ReactMapGL
+                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+                height="100%"
+                width="100%"
+                mapStyle="mapbox://styles/mapbox/streets-v11"
+                latitude={latitude}
+                longitude={longitude}
+                zoom={15}
+                className="map"
+              />
             </div>
           </div>
         </div>
-        <div className="">
-          <figure className="image">
-            <img src={image} alt={pubName}/>
-          </figure>
-          <div className="map-container">
-            <ReactMapGL
-              mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
-              height="100%"
-              width="100%"
-              mapStyle="mapbox://styles/mapbox/streets-v11"
-              latitude={latitude}
-              longitude={longitude}
-              zoom={15}
-            />
+        <hr  />
+        <div className="admin-rating">
+          <h3>Ratings...</h3>
+          <hr/>
+          <ReactStars 
+            count={5}
+            size={20}
+            half={false}
+            value={userRating}
+            emptyIcon={<i className="far fa-star"></i>}s
+            fullIcon={<i className="fa fa-star"></i>}
+            edit={false}
+          />
+          <p>{description}</p>
+        </div>
+        <section className="ratings">
+          <div className="rating-box">
+            <h3>User Ratings...</h3>
+            <hr/>
+            {
+              pubReviews.map(review => (
+                <ReviewCard key={review._id} comments={review} />
+              ))
+            }
           </div>
-        </div>
-      </div>
-      <hr />
-      <p>{description}</p>
-      <ReactStars 
-        count={5}
-        size={20}
-        half={false}
-        value={userRating}
-        emptyIcon={<i className="far fa-star"></i>}s
-        fullIcon={<i className="fa fa-star"></i>}
-        edit={false}
-      />
-
-      <section className="ratings">
-        <div>
-          {
-            pubReviews.map(review => (
-              <ReviewCard key={review._id} comments={review} />
-            ))
-          }
-
-        </div>
-        <div>
-          <button className="button">
+          <form>
+            <div>
+              {!isClicked ? <button className="button" onClick={handleClick}>
             Add Your Review
-          </button>
-        </div>
+              </button> : <button onSubmit={handleSubmit}>Submit</button>}
+            </div>
+            {isClicked && <textarea
+              className="textarea"
+              name="text"
+              value={formData.text}
+              onChange={handleChange}
+            />} 
+  
+          </form>
+        </section>
       </section>
-    </section>
+    </>
   )
 
-}
 
+}
 export default PubShow
+
+
+// import { isAuthenticated, isOwner, showUserProfile } from '../../lib/auth'
+// import { getUserId } from '../../lib/api'
+
+// function PubShow () {
+//   const [pub, setPub] = React.useState('')
+//   const [pubReviews, setPubReviews] = React.useState([])
+
+//   const { clubId, pubId } = useParams()
+
+

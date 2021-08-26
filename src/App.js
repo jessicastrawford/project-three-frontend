@@ -11,7 +11,7 @@ import InteractiveMap from './components/maps/InteractiveMap'
 import About from './components/common/About'
 import Footer from './components/common/Footer'
 import PubShow from './components/pubs/PubsShow'
-import PubForm from './components/ImageUpload'
+import PubForm from './components/pubs/PubForm'
 // import './App.scss'
 
 

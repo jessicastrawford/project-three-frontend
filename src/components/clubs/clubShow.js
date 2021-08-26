@@ -87,7 +87,6 @@ function ClubShow () {
             </div>
           </div>
         </div>
-        
         <div className="club-info">
           <div className="club-info-image">
             <img src={logo}/>
@@ -100,23 +99,29 @@ function ClubShow () {
           </div>
         </div>
       </div>
-      <div className="pubs">
-        <PubClubCard key={clubPubs._id} pub={ clubPubs } clubId = {clubId}/>
-      </div>
-      <div>
-        <h3>Where you&apos;ll be</h3>
-        <div className="map-container">
-          <ReactMapGL
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
-            height="100%"
-            width="100%"
-            mapStyle="mapbox://styles/mapbox/streets-v11"
-            latitude={latitude}
-            longitude={longitude}
-            zoom={15}
-          />
+      <div className="bottom-half">
+        <div className="bottom">
+          <div className="pubs">
+            <PubClubCard key={clubPubs._id} pub={ clubPubs } clubId = {clubId}/>
+          </div>
+          <div className="map-section">
+            <h3>Where you&apos;ll be...</h3>
+            <div className="map-container">
+              <ReactMapGL
+                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+                height="100%"
+                width="100%"
+                mapStyle="mapbox://styles/mapbox/streets-v11"
+                latitude={latitude}
+                longitude={longitude}
+                zoom={15}
+              />
+            </div>
+          </div>
         </div>
+
       </div>
+ 
     </section>
   )
 }
