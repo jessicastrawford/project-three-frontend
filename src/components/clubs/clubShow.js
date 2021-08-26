@@ -1,9 +1,13 @@
 import React from 'react'
-import ReactMapGL, { Marker } from 'react-map-gl'
+import { useParams } from 'react-router-dom'
+import ReactMapGL from 'react-map-gl'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart, faUpload } from '@fortawesome/free-solid-svg-icons'
   
     
-import { useParams, useHistory } from 'react-router-dom'
+// import { useParams, useHistory } from 'react-router-dom'
 import { getSingleClub } from '../../lib/api'
+import PubClubCard from '../pubs/PubClubCard'
 
 
 function ClubShow () {
@@ -20,6 +24,7 @@ function ClubShow () {
 
 
   React.useEffect(() => {
+    console.log('Hello')
     const getData = async () => {
       try {
         const response = await getSingleClub(clubId)
@@ -30,6 +35,12 @@ function ClubShow () {
     }
     getData()
   }, [clubId])
+
+ 
+  console.log(club)
+  const clubPubs = club.pubs === undefined ? '' : club?.pubs.map(pub => {
+    return pub 
+  }) 
 
   const { 
     clubName, 
@@ -43,15 +54,8 @@ function ClubShow () {
     stadiumInfo, 
     latitude, 
     longitude,
-    addedBy } = club 
+  } = club 
 
-
-
-  // if (isAuthenticated()) {
-  //   React.useEffect(() => {
-  //     const { data } = await 
-  //   })
-  // } 
 
 
   return (
@@ -61,6 +65,13 @@ function ClubShow () {
           <div className="title">
             <h1>{clubName}</h1>
             <p><u>Location: {location}</u></p>
+          </div>
+          <div className="favourites">
+            <FontAwesomeIcon icon={faHeart} />
+          </div>
+          <div className="share">
+            <FontAwesomeIcon icon={faUpload} />
+            <p><u>Share</u></p>
           </div>
           <div className="gallery"> 
             <div className="main-image">
@@ -91,20 +102,25 @@ function ClubShow () {
           </div>
         </div>
       </div>
+      <div className="pubs">
+        <PubClubCard key={clubPubs._id} pub={ clubPubs } clubId = {clubId}/>
+      </div>
       <div>
         <h3>Where you&apos;ll be</h3>
+        <div className="map-container">
+          <ReactMapGL
+            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+            height="100%"
+            width="100%"
+            mapStyle="mapbox://styles/mapbox/streets-v11"
+            latitude={latitude}
+            longitude={longitude}
+            zoom={15}
+          />
+        </div>
       </div>
-      <div className="map-container">
-        <ReactMapGL
-          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
-          height="100%"
-          width="100%"
-          mapStyle="mapbox://styles/mapbox/streets-v11"
-          latitude={latitude}
-          longitude={longitude}
-          zoom={15}
-        />
-      </div>
+
+
     </section>
   )
 }

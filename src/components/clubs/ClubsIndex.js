@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import Loading from '../common/Loading'
+// import heroimage from '../../assets/index-page.png'
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 function ClubsIndex() {
   const [clubs, setClubs] = React.useState(null)
@@ -35,10 +38,13 @@ function ClubsIndex() {
       return (club.clubName.toLowerCase().includes(searchValue.toLocaleLowerCase()) &&  (selectInput === 'all' || club.league === selectInput))
     })
   }
-  
+
 
   return (
     <section className="club-index-wrapper">
+      <div className="title">
+        <h1>Choose A Club</h1>
+      </div>
       <div className="dropdown-wrapper">
         <div className="search-bar">
           <input type="text" placeholder="Search...." onChange={handleSearch}/>
@@ -61,15 +67,16 @@ function ClubsIndex() {
             </select>
           </div>
         </div>
-
-        
         <div className="club-card-container">
-          {isLoading && <div>Loading....</div>} 
+          {isLoading && Loading} 
           {!isLoading && filteredClubs().map(club => ( 
             <Link to={`/clubs/${club._id}`} key={club._id}>
               <div className="club-card">
-                <h3>{club.clubName}</h3>
-                <img src={club.logo}/>
+                <img src={club.logo} className="image"/>
+                <div className="middle">
+                  <h3 className="text">{club.clubName}</h3>
+                  <FontAwesomeIcon icon={faHeart} />
+                </div>
               </div>
             </Link>
           ))}

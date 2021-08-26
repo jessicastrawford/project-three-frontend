@@ -6,7 +6,7 @@ import Signup from './Signup'
 
 // import { pubs } from '../../data/pubs'
 import { getAllPubs } from '../../lib/api'
-import PubHomepageCard from '../pubs/PubHomepageCard'
+import PubHomepageCard from '../pubs/PubClubCard'
 
 import image1 from '../../assets/1.jpg'
 import image2 from '../../assets/2.jpg'
@@ -20,11 +20,35 @@ function Home() {
 
   React.useEffect(() => {
     const getData = async () => {
-      const response = await getAllPubs()
-      console.log(response.data)
-      return response.data.map(pub => {
-        console.log(pub)
-      })
+      try {
+        const { data } = await getAllPubs()
+        const filteredPubs = data.filter(pub => {
+          const highestRated = pub.userRating >= 4
+          return highestRated
+        })
+        console.log(data)
+        console.log(filteredPubs)
+        setPubs(filteredPubs)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getData()
+  }, [])
+
+//   React.useEffect(() => {
+//     const response = await getAllPubs()
+//     console.log(response.data)
+//     return response.data.map(pub => {
+//       console.log(pub)
+//     })
+
+//   })
+
+// }
+// getData()
+// }, [])
+
 
       // clubData.forEach(club => {
       //   club.addedBy = admin
@@ -51,10 +75,6 @@ function Home() {
       // } catch (err) {
       //   console.log(err)
       // }
-    }
-    getData()
-  }, [])
-
 
   // const filteredPubs = pubs.filter(pub => {
   //   const highestRated = pub.userRating >= 4
@@ -81,6 +101,7 @@ function Home() {
           <h3>Top 5 Rated Pubs</h3>
         </div>
         <div className="pub-cards">
+          {/* {filteredPubs.map(pub => (
           {/* {pubs.map(pub => (
             <PubHomepageCard key={pub._id} pub={pub} />
           ))} */}
