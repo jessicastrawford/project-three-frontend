@@ -72,3 +72,7 @@ export function editPub(pubId, formdata){
 
 // Comments
 
+export function getAllComments(clubId, pubId){
+  return axios.get(`${baseUrl}/clubs/${clubId}/pubs/${pubId}/comments`)
+}
+

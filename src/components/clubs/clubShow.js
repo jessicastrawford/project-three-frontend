@@ -1,21 +1,17 @@
 import React from 'react'
-  
-    
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getSingleClub } from '../../lib/api'
-// import { isAuthenticated, getPaylod, isOwner } from '../../lib/auth'
-// import Loading from '../common/Loading'
+import PubHomepageCard from '../pubs/PubHomepageCard'
 
 
 function ClubShow () {
   const [club, setClub] = React.useState('')
-  // const [user, setUser] = React.useState(null)
 
   const { clubId } = useParams()
-  // const history = useHistory()
-  // const isLoggedIn = isAuthenticated()
+  console.log(clubId)
 
   React.useEffect(() => {
+    console.log('Hello')
     const getData = async () => {
       try {
         const response = await getSingleClub(clubId)
@@ -27,6 +23,12 @@ function ClubShow () {
     getData()
   }, [clubId])
 
+ 
+  console.log(club)
+  const clubPubs = club.pubs === undefined ? '' : club?.pubs.map(pub => {
+    return pub 
+  }) 
+
   const { 
     clubName, 
     logo, 
@@ -37,9 +39,9 @@ function ClubShow () {
     location, 
     capacity, 
     stadiumInfo, 
-    latitude, 
-    longitude,
-    addedBy } = club 
+    // latitude, 
+    // longitude,
+  } = club 
 
 
 
@@ -86,6 +88,9 @@ function ClubShow () {
             <hr/>
           </div>
         </div>
+      </div>
+      <div className="pubs">
+        <PubHomepageCard key={clubPubs._id} pub={ clubPubs } />
       </div>
       <div>
         <h3>Where you&apos;ll be</h3>

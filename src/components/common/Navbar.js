@@ -3,12 +3,12 @@ import React from 'react'
 // import 'materialize-css'
 // import { Navbar } from 'react-materialize'
 import logo from '../../assets/away-days-logo.png'
-import { button } from './Button'
+// import { button } from './Button'
 
 function Nav () {
 
-  const [click, setClick] = React.useState(false)
-  const [button, setButton] = React.useState(true)
+  // const [click, setClick] = React.useState(false)
+  // const [button, setButton] = React.useState(true)
   const [navbar, setNavbar] = React.useState(false)
 
   const changeBackground = () => {

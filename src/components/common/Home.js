@@ -5,7 +5,7 @@ import Signup from './Signup'
 // import { Link, useParams } from 'react-router-dom'
 
 import { pubs } from '../../data/pubs'
-import { getAllPubs } from '../../lib/api'
+// import { getAllPubs } from '../../lib/api'
 import PubHomepageCard from '../pubs/PubHomepageCard'
 
 import image1 from '../../assets/1.jpg'
@@ -62,9 +62,9 @@ function Home() {
           <h3>Top 5 Rated Pubs</h3>
         </div>
         <div className="pub-cards">
-          {filteredPubs.map(pub => (
+          {/* {filteredPubs.map(pub => (
             <PubHomepageCard key={pub._id} pub={pub} />
-          ))}
+          ))} */}
         </div>
       </section>
       <section className="sign-up">

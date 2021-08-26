@@ -25,11 +25,11 @@ function App() {
         <Route exact path="/clubs/:clubId/pubs/:pubId">
           <PubShow />
         </Route>
-        <Route exact path="/clubs">
-          <ClubsIndex />
-        </Route>
         <Route path="/clubs/:clubId">
           <ClubShow />
+        </Route>
+        <Route path="/clubs">
+          <ClubsIndex />
         </Route>
         <Route path="/login">
           <Login />
