@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { getSingleClub } from '../../lib/api'
-import PubHomepageCard from '../pubs/PubHomepageCard'
+import PubClubCard from '../pubs/PubClubCard'
 
 
 function ClubShow () {
@@ -90,7 +90,7 @@ function ClubShow () {
         </div>
       </div>
       <div className="pubs">
-        <PubHomepageCard key={clubPubs._id} pub={ clubPubs } />
+        <PubClubCard key={clubPubs._id} pub={ clubPubs } clubId = {clubId}/>
       </div>
       <div>
         <h3>Where you&apos;ll be</h3>

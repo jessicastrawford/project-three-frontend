@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import Loading from '../common/Loading'
 // import heroimage from '../../assets/index-page.png'
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 function ClubsIndex() {
   const [clubs, setClubs] = React.useState(null)
@@ -73,6 +75,7 @@ function ClubsIndex() {
                 <img src={club.logo} className="image"/>
                 <div className="middle">
                   <h3 className="text">{club.clubName}</h3>
+                  <FontAwesomeIcon icon={faHeart} />
                 </div>
               </div>
             </Link>

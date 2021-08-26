@@ -4,7 +4,8 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
-function PubHomepageCard( { pub, clubId } ) {
+
+function PubClubCard( { pub, clubId } ) {
 
   console.log(pub)
 
@@ -40,4 +41,4 @@ function PubHomepageCard( { pub, clubId } ) {
   )
 }
 
-export default PubHomepageCard
+export default PubClubCard
