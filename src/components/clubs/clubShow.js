@@ -5,9 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faUpload } from '@fortawesome/free-solid-svg-icons'
   
     
-// import { useParams, useHistory } from 'react-router-dom'
-import { getSingleClub } from '../../lib/api'
-import PubClubCard from '../pubs/PubClubCard'
+import { useParams, useHistory } from 'react-router-dom'
+import { getSingleClub, showUserProfile } from '../../lib/api'
+import Favorites from '../user/Favorites'
+// import { isAuthenticated, getPaylod, isOwner } from '../../lib/auth'
+// import Loading from '../common/Loading'
 
 
 function ClubShow () {
@@ -52,7 +54,20 @@ function ClubShow () {
     stadiumInfo, 
     latitude, 
     longitude,
-  } = club 
+    addedBy } = club 
+
+  const handleFavorite = async (e) => {
+    try {
+      const currentUser = await Favorites()
+      if (e.target.value) {
+        console.log(currentUser)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+
 
 
 
@@ -62,6 +77,11 @@ function ClubShow () {
         <div className="club-gallery-title">
           <div className="title">
             <h1>{clubName}</h1>
+            <div className="favourites">
+              <button className="likeBtn" onClick={handleFavorite}>
+                <i className="fas fa-heart fa-lg" style={{ color: 'grey' }}>Add to Favorites</i>
+              </button>
+            </div>
             <p><u>Location: {location}</u></p>
           </div>
           <div className="favourites">

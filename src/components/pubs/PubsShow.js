@@ -9,7 +9,6 @@ import {
   faHeart } from '@fortawesome/free-solid-svg-icons'
 import ReactMapGL from 'react-map-gl'
 
-
 function PubShow () {
   const [pub, setPub] = React.useState('')
   const [pubReviews, setPubReviews] = React.useState([])
