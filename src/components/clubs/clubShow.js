@@ -1,28 +1,20 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
 import ReactMapGL from 'react-map-gl'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faUpload } from '@fortawesome/free-solid-svg-icons'
-  
-    
-// import { useParams, useHistory } from 'react-router-dom'
+
+import { useParams } from 'react-router-dom'
+
 import { getSingleClub } from '../../lib/api'
 import PubClubCard from '../pubs/PubClubCard'
 
-
 function ClubShow () {
   const [club, setClub] = React.useState('')
-
+  // const [user, setUser] = React.useState(null)
+  // const [] = React.useState({
   // })
-  // const [viewport, setViewport] = React.useState({
-  //   latitude: 51.0,
-  //   longitude: 0.0,
-  //   zoom: 15,
-  // })
-
   const { clubId } = useParams()
-
-
+  console.log(clubId)
   React.useEffect(() => {
     console.log('Hello')
     const getData = async () => {
@@ -35,13 +27,11 @@ function ClubShow () {
     }
     getData()
   }, [clubId])
-
  
   console.log(club)
   const clubPubs = club.pubs === undefined ? '' : club?.pubs.map(pub => {
     return pub 
   }) 
-
   const { 
     clubName, 
     logo, 
@@ -55,8 +45,6 @@ function ClubShow () {
     latitude, 
     longitude,
   } = club 
-
-
 
   return (
     <section className="club-show-page">
@@ -119,10 +107,7 @@ function ClubShow () {
           />
         </div>
       </div>
-
-
     </section>
   )
 }
-
 export default ClubShow

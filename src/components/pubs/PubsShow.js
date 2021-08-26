@@ -53,6 +53,7 @@ function PubShow () {
     image,
   } = pub
 
+  
 
   return (
     <section className="pub-show-page">
@@ -71,34 +72,25 @@ function PubShow () {
             </div>
           </div>
         </div>
-        <figure className="image">
-          <img src={image} alt={pubName}/>
-        </figure>
-        <div className="map-container">
-          <ReactMapGL
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
-            height="100%"
-            width="100%"
-            mapStyle="mapbox://styles/mapbox/streets-v11"
-            latitude={latitude}
-            longitude={longitude}
-            zoom={15}
-          />
+        <div className="">
+          <figure className="image">
+            <img src={image} alt={pubName}/>
+          </figure>
+          <div className="map-container">
+            <ReactMapGL
+              mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+              height="100%"
+              width="100%"
+              mapStyle="mapbox://styles/mapbox/streets-v11"
+              latitude={latitude}
+              longitude={longitude}
+              zoom={15}
+            />
+          </div>
         </div>
       </div>
       <hr />
       <p>{description}</p>
-      <div className="map-container">
-        <ReactMapGL
-          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
-          height="100%"
-          width="100%"
-          mapStyle="mapbox://styles/mapbox/streets-v11"
-          latitude={latitude}
-          longitude={longitude}
-          zoom={15}
-        />
-      </div>
       <ReactStars 
         count={5}
         size={20}
@@ -119,7 +111,7 @@ function PubShow () {
 
         </div>
         <div>
-          <button className="button" onClick={handleClick}>
+          <button className="button">
             Add Your Review
           </button>
         </div>
