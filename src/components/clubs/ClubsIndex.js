@@ -5,6 +5,8 @@ import Loading from '../common/Loading'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { getSingleClub, likeClub } from '../../lib/api'
+import { isAuthenticated } from '../../lib/auth'
 
 function ClubsIndex() {
   const [clubs, setClubs] = React.useState(null)
@@ -37,6 +39,23 @@ function ClubsIndex() {
     return clubs?.filter(club => {
       return (club.clubName.toLowerCase().includes(searchValue.toLocaleLowerCase()) &&  (selectInput === 'all' || club.league === selectInput))
     })
+  }
+
+  const toggleLike = async (e) => {
+    const clubId = e.target.parentElement.id
+    console.log(clubId)
+    try {
+      const club = await getSingleClub(clubId)
+      const userId = club.data.likedBy.map(user => {
+        console.log(user._id)
+        user._id === club.data._id ? user._id : null
+      })
+      if (!isAuthenticated()) throw new Error
+      const like = await likeClub(clubId, userId)
+      console.log(club.data.likedBy, like)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
 
@@ -76,15 +95,20 @@ function ClubsIndex() {
         <div className="club-card-container">
           {isLoading && Loading} 
           {!isLoading && filteredClubs().map(club => ( 
-            <Link to={`/clubs/${club._id}`} key={club._id}>
-              <div className="club-card">
-                <img src={club.logo} className="image"/>
-                <div className="middle">
-                  <h3 className="text">{club.clubName}</h3>
-                  <FontAwesomeIcon icon={faHeart} />
+            <section key={club._id}>
+              <Link to={`/clubs/${club._id}`} key={club._id}>
+                <div className="club-card">
+                  <img src={club.logo} className="image"/>
+                  <div className="middle">
+                    <h3 className="text">{club.clubName}</h3>
+                    
+                  </div>
                 </div>
+              </Link>
+              <div className="favourites" >
+                <FontAwesomeIcon icon={faHeart} onClick={toggleLike} id={club._id} />
               </div>
-            </Link>
+            </section>
           ))}
         </div>
         

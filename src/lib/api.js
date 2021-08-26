@@ -51,6 +51,10 @@ export function editClub(clubId, formData) {
   return axios.put(`/api/clubs/${clubId}`, formData, headers())
 }
 
+export function likeClub(clubId, userId) {
+  return axios.post(`/api/clubs/${clubId}/like`, userId, headers())
+}
+
 
 // Pub Requests
 
