@@ -10,7 +10,7 @@ function PubClubCard( { pub, clubId } ) {
   console.log(pub)
 
   return (
-    <main>
+    <section>
       <div className="pub-cards">
         <div className="pub-card">
           {pub &&
@@ -21,23 +21,25 @@ function PubClubCard( { pub, clubId } ) {
                     <img src={pub.image} alt={pub.pubName} />
                   </figure>
                   <h3>{pub.pubName}</h3>
-                  <FontAwesomeIcon icon={faHeart} />
-                  <ReactStars
-                    count={5}
-                    size={20}
-                    half={false}
-                    value={pub.userRating}
-                    emptyIcon={<i className="far fa-star"></i>}
-                    s
-                    fullIcon={<i className="fa fa-star"></i>}
-                    edit={false}
-                  />
+                  <div className="icons">
+                    <FontAwesomeIcon icon={faHeart} />
+                    <ReactStars
+                      count={5}
+                      size={20}
+                      half={false}
+                      value={pub.userRating}
+                      emptyIcon={<i className="far fa-star"></i>}
+                      s
+                      fullIcon={<i className="fa fa-star"></i>}
+                      edit={false}
+                    />
+                  </div>
                 </Link>
               </div>
             ))}
         </div>
       </div>
-    </main>
+    </section>
   )
 }
 

@@ -2,11 +2,11 @@ import React from 'react'
 import ReactMapGL from 'react-map-gl'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faUpload } from '@fortawesome/free-solid-svg-icons'
-
 import { useParams } from 'react-router-dom'
-
-import { getSingleClub } from '../../lib/api'
+import { isAuthenticated } from '../../lib/auth'
+import { getSingleClub, likeClub } from '../../lib/api'
 import PubClubCard from '../pubs/PubClubCard'
+
 
 function ClubShow () {
   const [club, setClub] = React.useState('')
@@ -14,7 +14,7 @@ function ClubShow () {
   // const [] = React.useState({
   // })
   const { clubId } = useParams()
-  console.log(clubId)
+  // console.log(clubId)
   React.useEffect(() => {
     console.log('Hello')
     const getData = async () => {
@@ -27,8 +27,8 @@ function ClubShow () {
     }
     getData()
   }, [clubId])
- 
-  console.log(club)
+
+  // console.log(club)
   const clubPubs = club.pubs === undefined ? '' : club?.pubs.map(pub => {
     return pub 
   }) 
@@ -46,6 +46,21 @@ function ClubShow () {
     longitude,
   } = club 
 
+  const toggleLike = async () => {
+    try {
+      const club = await getSingleClub(clubId)
+      const userId = club.data.likedBy.map(user => {
+        console.log(user._id)
+        user._id === club.data._id ? user._id : null
+      })
+      if (!isAuthenticated()) throw new Error
+      const like = await likeClub(clubId, userId)
+      console.log(club.data.likedBy, like)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <section className="club-show-page">
       <div className="top-half">
@@ -54,7 +69,7 @@ function ClubShow () {
             <h1>{clubName}</h1>
             <p><u>Location: {location}</u></p>
           </div>
-          <div className="favourites">
+          <div className="favourites" onClick={toggleLike}>
             <FontAwesomeIcon icon={faHeart} />
           </div>
           <div className="share">
@@ -77,7 +92,6 @@ function ClubShow () {
             </div>
           </div>
         </div>
-        
         <div className="club-info">
           <div className="club-info-image">
             <img src={logo}/>
@@ -90,23 +104,29 @@ function ClubShow () {
           </div>
         </div>
       </div>
-      <div className="pubs">
-        <PubClubCard key={clubPubs._id} pub={ clubPubs } clubId = {clubId}/>
-      </div>
-      <div>
-        <h3>Where you&apos;ll be</h3>
-        <div className="map-container">
-          <ReactMapGL
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
-            height="100%"
-            width="100%"
-            mapStyle="mapbox://styles/mapbox/streets-v11"
-            latitude={latitude}
-            longitude={longitude}
-            zoom={15}
-          />
+      <div className="bottom-half">
+        <div className="bottom">
+          <div className="pubs">
+            <PubClubCard key={clubPubs._id} pub={ clubPubs } clubId = {clubId}/>
+          </div>
+          <div className="map-section">
+            <h3>Where you&apos;ll be...</h3>
+            <div className="map-container">
+              <ReactMapGL
+                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+                height="100%"
+                width="100%"
+                mapStyle="mapbox://styles/mapbox/streets-v11"
+                latitude={latitude}
+                longitude={longitude}
+                zoom={15}
+              />
+            </div>
+          </div>
         </div>
+
       </div>
+ 
     </section>
   )
 }
