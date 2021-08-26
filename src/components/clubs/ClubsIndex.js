@@ -42,31 +42,37 @@ function ClubsIndex() {
 
   return (
     <section className="club-index-wrapper">
-      <div className="title">
-        <h1>Choose A Club</h1>
-      </div>
-      <div className="dropdown-wrapper">
-        <div className="search-bar">
-          <input type="text" placeholder="Search...." onChange={handleSearch}/>
-        </div>
-        <div className="field">
-          <label className="label">Pick a League</label>
-          <div className="select">
-            <select
-              name="league"
-              onChange={handleLeagueFilter}
-              value={clubs?.league}
-            >
-              <option value="" disabled></option>
-              <option value="all">All</option>
-              <option value="Premier League">Premier League</option>
-              <option value="Championship">Championship</option>
-              <option value="League One">League One</option>
-              <option value="League Two">League Two</option>
-              <option value="National league">National League</option>
-            </select>
+      <div>
+        <div className="image">
+          <div className="title-text">
+            <h1 className="slide-right">Choose A Club</h1>
+          </div>
+          <div className="search-box">
+            <div className="search-bar">
+              <input type="text" placeholder="Search...." onChange={handleSearch}/>
+            </div>
+            <div className="field">
+              <label className="label">Pick a League</label>
+              <div className="select">
+                <select
+                  name="league"
+                  onChange={handleLeagueFilter}
+                  value={clubs?.league}
+                >
+                  <option value="" disabled></option>
+                  <option value="all">All</option>
+                  <option value="Premier League">Premier League</option>
+                  <option value="Championship">Championship</option>
+                  <option value="League One">League One</option>
+                  <option value="League Two">League Two</option>
+                  <option value="National league">National League</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+      <div className="dropdown-wrapper">
         <div className="club-card-container">
           {isLoading && Loading} 
           {!isLoading && filteredClubs().map(club => ( 

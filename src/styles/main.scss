@@ -17,43 +17,6 @@ body {
 }
 
 
-// Buttons
-
-.btn {
-  padding: 8px 20px;
-  border-radius: 2px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
-
-.btn--primary {
-  background-color: white;
-  color:black;
-  border: 1px solid white;
-}
-
-.btn--outline {
-  background-color: transparent;
-  color: black;
-  padding: 8px 20px;
-  border: 1px solid black;
-  transition: all 0.3s ease-out;
-}
-
-.btn--medium {
-  padding: 8px 20px;
-  font-size: 20px;
-}
-.btn--large {
-  padding: 12px 26px;
-  font-size: 20px;
-}
-.btn--large:hover, .btn--medium:hover{
-  background: white;
-  color:black;
-  transition: ease-out;
-}
 
 // Navbar
 
@@ -240,6 +203,29 @@ body {
         }
       }
     }
+    .bottom-half{
+      .bottom{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+
+        .pubs{
+
+          h3{
+            font-size: 20px;
+            color: black;
+          }
+          a{
+            text-decoration: none;
+          }
+          .icons{
+            padding-bottom: 20px;
+          }
+
+        }
+      }
+
+    }
 
     .club-info{
       display: flex;
@@ -265,18 +251,48 @@ body {
 
 // Clubs Index Page 
 
+
 .club-index-wrapper{
-  .title{
+  .image{
     background-image: url(../assets/hero2.png);
     background-position: center;
     background-size: cover;
     margin-top: 20px;
     height: 600px;
+    width: 1500px;
     font-weight: bold;
-    h1{
+    margin:0 auto;
+    border:1px white solid;
 
-      padding:300px;
+  .title-text h1{
+    margin: 440px 10px 0px 350px;
+    padding-bottom: 15px;
+    font-size: 60px;
+    
+
+  }
+
+  .search-box{
+    margin-left: 430px;
+    display: flex;
+
+    .search-bar{
+      padding-right: 20px;
+    
     }
+
+  }
+
+    
+    // .slide-right{
+    //   overflow: hidden;
+
+    //   h1{
+    //     animation: 2s slide-right 2s forwards;
+    //     transform:translateX(-100%);
+    //   }
+ 
+    // }
   }
   .dropdown-wrapper{
     display: flex;
@@ -285,11 +301,15 @@ body {
     align-items: center;
   }
   .club-card-container{
+    width: 1500px;
+    display: flex;
+    justify-content: center;
     .club-card{
       border:none;
       text-align: center;
       // margin: 0 auto;
       img{
+        background-image: none;
         width: 200px;
         object-fit: contain;
         display: inline-block;
@@ -368,15 +388,51 @@ body {
 
 .pub-show-page{
 
+  .button{
+    background-color: white;
+    border: 1px solid #b5b5b5;;
+    padding: 10px 20px 12px 20px;
+    border-radius: 10px;
+  }
+    .button:hover{
+      background-color: #f0f0f0;
+    }
+  
+    .pub-card img{
+      width: 600px;
+      border-radius: 15px;
+      padding-right: 10px;
+      // margin-top: 50px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .admin-rating{
+    padding-right: 500px;
+
+    p{
+      width: 600px;
+    }
+  }
+
+  .ratings{
+    div{
+      padding-right: 312px;
+      margin-top: 20px;
+    }
+    hr{
+      width:600px;
+    }
+   
+  }
+  
+
   .pub-card{
+
     .title-icons{
       display: flex;
-      h1{
-        font-weight: bold;
-        margin-top: 60px;
-        padding-bottom: 20px;
-        color: #454545;
-      }
 
       p{
         color:#454545;
@@ -385,44 +441,53 @@ body {
       .icons{
         display: flex;
         justify-content: space-between;
-        width: 60px;
 
         div{
           padding-right:15px;
         }
       }
+    }
 
+    .box-section{
+      display: flex;
+      h1{
+        font-weight: bold;
+        padding-bottom: 15px;
+        color: #454545;
+      }
+      .map-container{
+        width: 500px;
+        height: 500px;
+        padding-left: 10px;
+        .map{
+          border-radius: 15px;
+        }
+      }
+      .title-and-image{
+        margin-top: 37px;
+      }
     }
   }
-.button{
-  background-color: white;
-  border: 1px solid #b5b5b5;;
-  padding: 10px 20px 12px 20px;
-  border-radius: 10px;
-}
-  .button:hover{
-    background-color: #f0f0f0;
-  }
-
-  .pub-card img{
-    width: 600px;
-    border-radius: 15px;
-  }
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 
 
 // Register & Login 
+.section{
+  margin-top: 30px;
+}
 
 .register-box{
   margin: 0 auto;
   text-align: center;
-  border: 1px solid black;
-  width: 450px;
-  padding: 40px 0px;
+  border: 1px solid #b5b5b5;
+  border-radius: 15px;
+  width: 500px;
+  padding: 50px 40px;
+
+  h1{
+    font-size: 30px;
+    padding-bottom:30px;
+  }
 
   .register-input{
     // margin:10px;
@@ -447,7 +512,7 @@ body {
 
   i{
     position:absolute;
-    left: 58%
+
   }
 
   i:hover{
@@ -458,7 +523,29 @@ body {
     span{
       text-decoration: underline;
     }
+    p{
+      margin-top: 10px;
+    }
   }
+  .button{
+    background-color: white;
+    border: 1px solid #b5b5b5;;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+    .button:hover{
+      background-color: #f0f0f0;
+    }
+
+    .field-one {
+      .login-button{
+        width: 330px;
+        margin-top: 15px;
+      }
+      .signup-button{
+        width: 330px;
+      }
+    }
 
 }
 

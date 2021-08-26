@@ -28,6 +28,7 @@ export function updateUser() {
 }
 
 
+
 // Club Requests
 
 export function getAllClubs() {
@@ -79,4 +80,13 @@ export function editPub(pubId, formdata){
 export function getAllComments(clubId, pubId){
   return axios.get(`${baseUrl}/clubs/${clubId}/pubs/${pubId}/comments`)
 }
+
+export function createAComment(clubId, pubId) {
+  return axios.post(`${baseUrl}/clubs/${clubId}/pubs/${pubId}/comments`)
+}
+
+export function deleteAComment(clubId, pubId, commentId) {
+  return axios.delete(`${baseUrl}/clubs/${clubId}/pubs/${pubId}/comments/${commentId}`)
+}
+
 

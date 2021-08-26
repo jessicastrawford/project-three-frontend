@@ -12,9 +12,9 @@ function ReviewCard({ comments }) {
   } = comments
 
   return (
-    <section>
+    <section className="ratings">
       <div>
-        <h3>Created by {addedBy}, <Moment fromNow >{createdAt}</Moment></h3>
+        <h5>Created by {addedBy}, <Moment fromNow >{createdAt}</Moment></h5>
         <p>Review: {text}</p>
         <ReactStars
           count={5}

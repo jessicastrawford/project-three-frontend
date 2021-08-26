@@ -3,15 +3,21 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import Signup from './Signup'
 // import { Link, useParams } from 'react-router-dom'
-// import { pubs } from '../../data/pubs'
+
+import { pubs } from '../../data/pubs'
 import { getAllPubs } from '../../lib/api'
 import PubHomepageCard from '../pubs/PubClubCard'
+
 import image1 from '../../assets/1.jpg'
 import image2 from '../../assets/2.jpg'
 import image3 from '../../assets/3.jpg'
 import image4 from '../../assets/4.jpeg'
+
+
 function Home() {
+
   const [pubs, setPubs] = React.useState([])
+
   React.useEffect(() => {
     const getData = async () => {
       try {
@@ -74,7 +80,9 @@ function Home() {
   //   const highestRated = pub.userRating >= 4
   //   return highestRated
   // })
+  
   console.log(pubs)
+
   return (
     <>
       <section className="hero-slideshow">
@@ -85,7 +93,7 @@ function Home() {
             <img src={image3} className="sliderimg"alt="football-image"/>
             <img src={image4} className="sliderimg"alt="football-image"/>
           </AliceCarousel>
-        </div>
+        </div> 
       </section>
       <section className="pub-cards">
       </section>
@@ -106,6 +114,10 @@ function Home() {
         </div>
       </section>
     </>
+
   )
+
 }
+
+
 export default Home
