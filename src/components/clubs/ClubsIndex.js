@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 // import { clubs } from '../../data/clubs'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
 function ClubsIndex() {
   const [clubs, setClubs] = React.useState(null)

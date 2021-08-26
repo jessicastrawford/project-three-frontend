@@ -2,7 +2,8 @@ import React from 'react'
   
     
 import { useParams, useHistory } from 'react-router-dom'
-import { getSingleClub } from '../../lib/api'
+import { getSingleClub, showUserProfile } from '../../lib/api'
+import Favorites from '../user/Favorites'
 // import { isAuthenticated, getPaylod, isOwner } from '../../lib/auth'
 // import Loading from '../common/Loading'
 
@@ -41,6 +42,17 @@ function ClubShow () {
     longitude,
     addedBy } = club 
 
+  const handleFavorite = async (e) => {
+    try {
+      const currentUser = await Favorites()
+      if (e.target.value) {
+        console.log(currentUser)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
 
   // if (isAuthenticated()) {
@@ -56,6 +68,11 @@ function ClubShow () {
         <div className="club-gallery-title">
           <div className="title">
             <h1>{clubName}</h1>
+            <div className="favourites">
+              <button className="likeBtn" onClick={handleFavorite}>
+                <i className="fas fa-heart fa-lg" style={{ color: 'grey' }}>Add to Favorites</i>
+              </button>
+            </div>
             <p><u>Location: {location}</u></p>
           </div>
           <div className="gallery"> 

@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import { getSinglePub } from '../../lib/api'
 import ReactStars from 'react-star-rating-component'
 
-
 function PubShow () {
   const [pub, setPub] = React.useState('')
   const [club, setClub] = React.useState('')
