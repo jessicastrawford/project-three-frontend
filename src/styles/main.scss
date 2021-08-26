@@ -627,6 +627,25 @@ footer{
 
 // Pub Form
 
+.section-wrapper {
+  border: 1px solid black;
+  width: 500px;
+  height:600px;
+}
 
+.form-wrapper {
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid black;
+  width: 450px;
+  height:500px;
+  padding: 40px 0px;
+
+  input {
+    border: 1px solid black;
+    height: 30px;
+    width: 100px;
+  }
+}
 
 
