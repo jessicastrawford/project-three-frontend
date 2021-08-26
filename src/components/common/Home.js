@@ -36,45 +36,45 @@ function Home() {
     getData()
   }, [])
 
-//   React.useEffect(() => {
-//     const response = await getAllPubs()
-//     console.log(response.data)
-//     return response.data.map(pub => {
-//       console.log(pub)
-//     })
+  //   React.useEffect(() => {
+  //     const response = await getAllPubs()
+  //     console.log(response.data)
+  //     return response.data.map(pub => {
+  //       console.log(pub)
+  //     })
 
-//   })
+  //   })
 
-// }
-// getData()
-// }, [])
+  // }
+  // getData()
+  // }, [])
 
 
-      // clubData.forEach(club => {
-      //   club.addedBy = admin
-      //   const commentText = faker.lorem.sentence()
-      //   const commentRating = Math.ceil(Math.random() * 5)
-      //   club.pubs.map(pub => {
-      //     pub.comments.push({
-      //       text: commentText,
-      //       rating: commentRating,
-      //       addedBy: createdUsers[Math.ceil(Math.random() * 99)],
-      //     })
-      //   })
-      // })
-      // console.log(filteredPubs)
-      // try {
-      //   const res = await getAllPubs()
-      //   const filteredPubs = data.filter(pub => {
-      //     const highestRated = pub.userRating >= 4
-      //     return highestRated
-      //   })
-      //   console.log(data)
-      //   console.log(filteredPubs)
-      //   setPubs(filteredPubs)
-      // } catch (err) {
-      //   console.log(err)
-      // }
+  // clubData.forEach(club => {
+  //   club.addedBy = admin
+  //   const commentText = faker.lorem.sentence()
+  //   const commentRating = Math.ceil(Math.random() * 5)
+  //   club.pubs.map(pub => {
+  //     pub.comments.push({
+  //       text: commentText,
+  //       rating: commentRating,
+  //       addedBy: createdUsers[Math.ceil(Math.random() * 99)],
+  //     })
+  //   })
+  // })
+  // console.log(filteredPubs)
+  // try {
+  //   const res = await getAllPubs()
+  //   const filteredPubs = data.filter(pub => {
+  //     const highestRated = pub.userRating >= 4
+  //     return highestRated
+  //   })
+  //   console.log(data)
+  //   console.log(filteredPubs)
+  //   setPubs(filteredPubs)
+  // } catch (err) {
+  //   console.log(err)
+  // }
 
   // const filteredPubs = pubs.filter(pub => {
   //   const highestRated = pub.userRating >= 4
