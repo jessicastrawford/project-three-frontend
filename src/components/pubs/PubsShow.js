@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { getSinglePub, getAllComments } from '../../lib/api'
+import { getSinglePub, getAllComments, getSingleClub, likePub } from '../../lib/api'
 import ReactStars from 'react-star-rating-component'
 import ReviewCard from '../reviews/ReviewCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,6 +8,7 @@ import {
   faUpload,
   faHeart } from '@fortawesome/free-solid-svg-icons'
 import ReactMapGL from 'react-map-gl'
+import { isAuthenticated } from '../../lib/auth'
 
 
 function PubShow () {
@@ -20,7 +21,7 @@ function PubShow () {
   React.useEffect(() => {
     const getData = async () => {
       try {
-        console.log(clubId, pubId)
+        // console.log(clubId, pubId)
         const response = await getSinglePub(clubId, pubId)
         setPub(response.data)
       } catch (err) {
@@ -53,6 +54,21 @@ function PubShow () {
     image,
   } = pub
 
+  const toggleLike = async () => {
+    try {
+      const club = await getSingleClub(clubId)
+      console.log(club)
+      // const userId = club.data.likedBy.map(user => {
+      //   user._id === club.data._id ? user._id : null
+      // })
+      // console.log(userId)
+      if (!isAuthenticated()) throw new Error
+      const like = await likePub(clubId, pubId)
+      console.log(like)
+    } catch (err) {
+      console.log(err)
+    }
+  }
   
 
   return (
@@ -61,7 +77,7 @@ function PubShow () {
         <div className="title-icons">
           <h1>{pubName}</h1>
           <div className="icons">
-            <div>
+            <div className="favourites" onClick={toggleLike} >
               <FontAwesomeIcon icon={faHeart} />
             </div>
             <div>

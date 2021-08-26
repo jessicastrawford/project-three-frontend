@@ -78,6 +78,10 @@ export function editPub(pubId, formdata){
   return axios.put(`/api/pubs/${pubId}`, formdata, headers())
 }
 
+export function likePub(clubId, pubId, userId) {
+  return axios.post(`/api/clubs/${clubId}/pubs/${pubId}/like`, userId, headers())
+}
+
 // Comments
 
 export function getAllComments(clubId, pubId){
