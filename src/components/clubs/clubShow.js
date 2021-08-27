@@ -123,7 +123,6 @@ function ClubShow () {
         </div>
 
       </div>
- 
     </section>
   )
 }

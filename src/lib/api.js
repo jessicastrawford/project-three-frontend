@@ -20,7 +20,7 @@ export function loginUser(formData) {
 }
 
 export function showUserProfile() {
-  return axios.get('/api/users/:userId', headers())
+  return axios.get('/api/user', headers())
 }
 
 export function updateUser() {

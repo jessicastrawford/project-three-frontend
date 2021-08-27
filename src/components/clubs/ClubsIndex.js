@@ -103,8 +103,7 @@ function ClubsIndex() {
               </div>
             </section>
           ))}
-        </div>
-        
+        </div> 
       </div>
     </section>
   )
