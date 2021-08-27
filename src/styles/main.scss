@@ -27,6 +27,7 @@ body {
   top:0;
   width: 100%;
   z-index: 999;
+
   
   // .navbar-nav{
   //   background-color: white;
@@ -163,7 +164,14 @@ body {
     flex-direction: column;
     margin-top:60px;
     
+    .icons{
+      display: flex;
+      justify-content: space-between;
+      width: 80px;
+    }
+ 
   }
+  
   
   .title h1{
     font-size: 25px;
@@ -210,6 +218,9 @@ body {
         margin-top: 50px;
 
         .pubs{
+          h2{
+            font-size: 27px;
+          }
 
           h3{
             font-size: 20px;
@@ -219,6 +230,10 @@ body {
             text-decoration: none;
           }
           .icons{
+            display: flex;
+            justify-content: space-between;
+          }
+          .stars{
             padding-bottom: 20px;
           }
 
@@ -265,7 +280,7 @@ body {
     border:1px white solid;
 
   .title-text h1{
-    margin: 440px 10px 0px 350px;
+    margin: 440px 10px 0px 310px;
     padding-bottom: 15px;
     font-size: 60px;
     
@@ -304,6 +319,12 @@ body {
     width: 1500px;
     display: flex;
     justify-content: center;
+    margin-top: 40px;
+
+    .full-card{
+      text-align: center;
+    }
+    
     .club-card{
       border:none;
       text-align: center;
@@ -419,7 +440,7 @@ body {
 
   .ratings{
     div{
-      padding-right: 312px;
+      padding-right: 300px;
       margin-top: 20px;
     }
     hr{
@@ -450,21 +471,20 @@ body {
 
     .box-section{
       display: flex;
-      h1{
-        font-weight: bold;
+      h3{
         padding-bottom: 15px;
-        color: #454545;
+        color: black;
       }
       .map-container{
         width: 500px;
         height: 500px;
         padding-left: 10px;
         .map{
-          border-radius: 15px;
+          border-radius: 25px;
         }
       }
       .title-and-image{
-        margin-top: 37px;
+        margin-top: 50px;
       }
     }
   }
@@ -546,6 +566,11 @@ body {
         width: 330px;
       }
     }
+    .field{
+      .login-button{
+        width: 330px;
+      }
+    }
 
 }
 
@@ -609,6 +634,7 @@ footer{
 // About- Social Media Page
 
 .about{
+  
   h1{
     text-align: center;
     margin-top: 50px;
@@ -616,11 +642,15 @@ footer{
   .team-social-media{
     display: flex;
     justify-content: center;
+    margin-right: 150px;
+    // margin-bottom: 410px;
   }
   .individual-social-media{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 100px;
+    padding-top: 40px;
   }
 }
 

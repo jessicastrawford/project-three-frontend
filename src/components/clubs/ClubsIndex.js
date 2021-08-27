@@ -64,7 +64,7 @@ function ClubsIndex() {
       <div>
         <div className="image">
           <div className="title-text">
-            <h1 className="slide-right">Choose A Club</h1>
+            <h1 className="slide-right">Choose A Club...</h1>
           </div>
           <div className="search-box">
             <div className="search-bar">
@@ -95,13 +95,12 @@ function ClubsIndex() {
         <div className="club-card-container">
           {isLoading && Loading} 
           {!isLoading && filteredClubs().map(club => ( 
-            <section key={club._id}>
+            <section key={club._id} className="full-card">
               <Link to={`/clubs/${club._id}`} key={club._id}>
                 <div className="club-card">
                   <img src={club.logo} className="image"/>
                   <div className="middle">
                     <h3 className="text">{club.clubName}</h3>
-                    
                   </div>
                 </div>
               </Link>

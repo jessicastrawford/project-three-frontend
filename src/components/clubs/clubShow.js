@@ -69,12 +69,14 @@ function ClubShow () {
             <h1>{clubName}</h1>
             <p><u>Location: {location}</u></p>
           </div>
-          <div className="favourites" onClick={toggleLike}>
-            <FontAwesomeIcon icon={faHeart} />
-          </div>
-          <div className="share">
-            <FontAwesomeIcon icon={faUpload} />
-            <p><u>Share</u></p>
+          <div className="icons">
+            <div className="favourites" onClick={toggleLike}>
+              <FontAwesomeIcon icon={faHeart} />
+            </div>
+            <div className="share">
+              <FontAwesomeIcon icon={faUpload} />
+              <p><u>Share</u></p>
+            </div>
           </div>
           <div className="gallery"> 
             <div className="main-image">

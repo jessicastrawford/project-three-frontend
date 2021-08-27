@@ -13,16 +13,19 @@ function PubClubCard( { pub, clubId } ) {
     <section>
       <div className="pub-cards">
         <div className="pub-card">
+          <h2>Nearby Pubs...</h2>
           {pub &&
             pub?.map((pub) => (
               <div key={pub.pubName}>
                 <Link to={'/clubs/' + clubId + '/pubs/' + pub._id}>
                   <figure className="pub-image">
                     <img src={pub.image} alt={pub.pubName} />
-                  </figure>
-                  <h3>{pub.pubName}</h3>
+                  </figure>       
                   <div className="icons">
+                    <h3>{pub.pubName}</h3>
                     <FontAwesomeIcon icon={faHeart} />
+                  </div>
+                  <div className="stars">
                     <ReactStars
                       count={5}
                       size={20}
