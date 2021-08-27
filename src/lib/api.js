@@ -20,7 +20,7 @@ export function loginUser(formData) {
 }
 
 export function showUserProfile() {
-  return axios.get('/api/users/:userId', headers())
+  return axios.get('/api/user', headers())
 }
 
 export function updateUser() {
@@ -89,8 +89,8 @@ export function getAllComments(clubId, pubId){
   return axios.get(`${baseUrl}/clubs/${clubId}/pubs/${pubId}/comments`)
 }
 
-export function createAComment(clubId, pubId) {
-  return axios.post(`${baseUrl}/clubs/${clubId}/pubs/${pubId}/comments`)
+export function createAComment(clubId, pubId, formData) {
+  return axios.post(`${baseUrl}/clubs/${clubId}/pubs/${pubId}/comments`, formData, headers())
 }
 
 export function deleteAComment(clubId, pubId, commentId) {

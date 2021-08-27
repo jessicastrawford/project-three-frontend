@@ -12,6 +12,7 @@ import About from './components/common/About'
 import Footer from './components/common/Footer'
 import PubShow from './components/pubs/PubsShow'
 import PubForm from './components/pubs/PubForm'
+import UserProfileShow from './components/user/UserProfileShow'
 // import './App.scss'
 
 
@@ -37,6 +38,9 @@ function App() {
         </Route>
         <Route path="/register">
           <Register />
+        </Route>
+        <Route path="/user/">
+          <UserProfileShow />
         </Route>
         <Route path="/pub-form">
           <PubForm />
