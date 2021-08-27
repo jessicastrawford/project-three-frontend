@@ -1,11 +1,14 @@
 import React from 'react'
-import ImageUploadField from './components/ImageUpload'
+import ImageUploadField from '../ImageUpload'
 
 function App() {
   const [formData, setFormData] = React.useState({
-    firstName: '',
-    lastName: '',
-    profileImage: '',
+    pubName: '',
+    description: '',
+    rating: '',
+    latitude: '',
+    longitude: '',
+    image: '',
   })
 
   const handleChange = (event) => {
@@ -23,45 +26,83 @@ function App() {
   }
 
   return (
-    <section className="section-wrapper">
-      <div className="form-wrapper">
-        <form onSubmit={handleSubmit}>
-          <div className="">
-            <label className="">First Name</label>
-            <div className="">
-              <input
-                className="input"
-                name="firstName"
-                value={formData.firstName}
+    <>
+      <section className="section-wrapper">
+        <div className="form-wrapper">
+          <form onSubmit={handleSubmit}>
+            <div className="field">
+              <label className="">Name of Your Pub</label>
+              <div className="">
+                <input
+                  className="input"
+                  name="pubName"
+                  value={formData.pubName}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="field">
+              <label className="">Latitude</label>
+              <div className="">
+                <input
+                  className=""
+                  name="latitude"
+                  value={formData.latitude}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="field">
+              <label className="">Longitude</label>
+              <div className="">
+                <input
+                  className=""
+                  name="longitude"
+                  value={formData.longitude}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="select">
+              <select
+                name="rating"
                 onChange={handleChange}
+                value={formData.rating}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div className="field">
+              <label className="label">Whats it Like?</label>
+              <div className="control">
+                <textarea
+                  className="textarea"
+                  name="description"
+                  value={formData.description}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="field">
+              <ImageUploadField
+                onChange={handleImageUpload}
+                labelText="Upload a Picture"
+                name="pubImage"
+                value={formData.image}
               />
             </div>
-          </div>
-          <div className="">
-            <label className="">Last Name</label>
-            <div className="">
-              <input
-                className=""
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-              />
+            <div className="btn">
+              <button className="" type="submit">Submit</button>
             </div>
-          </div>
-          <div className="">
-            <ImageUploadField
-              onChange={handleImageUpload}
-              labelText="Profile Image"
-              name="profileImage"
-              value={formData.profileImage}
-            />
-          </div>
-          <div className="">
-            <button className="" type="submit">Submit</button>
-          </div>
-        </form>
-      </div>
-    </section>
+          </form>
+        </div>
+      </section>
+    </>
+    
   )
 }
 

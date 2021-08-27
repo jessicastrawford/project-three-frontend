@@ -34,8 +34,6 @@ function PubShow () {
     console.log(nextValue)
   }
 
-  console.log(rating.nextValue)
-
   // constonStarClick(nextValue, prevValue, name) {
   //   setNextValue({rating: nextValue})
   // }
@@ -196,15 +194,3 @@ function PubShow () {
 }
 
 export default PubShow
-
-
-// import { isAuthenticated, isOwner, showUserProfile } from '../../lib/auth'
-// import { getUserId } from '../../lib/api'
-
-// function PubShow () {
-//   const [pub, setPub] = React.useState('')
-//   const [pubReviews, setPubReviews] = React.useState([])
-
-//   const { clubId, pubId } = useParams()
-
-

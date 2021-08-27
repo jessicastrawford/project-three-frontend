@@ -34,21 +34,22 @@ function ImageUploadField({ onChange, labelText, name, value }) {
       )}
       {!isUploading && !value && (
         <>
-          <div className="file is-boxed is-fullwidth has-text-centered">
-            <label className="file-label">
+          <div className="">
+            <label className="">
               <input
-                className="file-input"
+                className=""
                 type="file"
                 name={name}
                 onChange={handleUpload}
               />
-              <span className="file-cta">
-                <span className="file-label">Choose a file…</span>
+              <span className="">
+                <span className="">Choose a file…</span>
               </span>
             </label>
           </div>
         </>
       )}
+      
     </>
   )
 }

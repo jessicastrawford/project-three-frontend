@@ -48,14 +48,9 @@ function ClubShow () {
 
   const toggleLike = async () => {
     try {
-      const club = await getSingleClub(clubId)
-      const userId = club.data.likedBy.map(user => {
-        console.log(user._id)
-        user._id === club.data._id ? user._id : null
-      })
       if (!isAuthenticated()) throw new Error
-      const like = await likeClub(clubId, userId)
-      console.log(club.data.likedBy, like)
+      const like = await likeClub(clubId)
+      console.log(like)
     } catch (err) {
       console.log(err)
     }
