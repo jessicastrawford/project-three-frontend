@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 import { isAuthenticated } from '../../lib/auth'
 import { getSingleClub, likeClub } from '../../lib/api'
 import PubClubCard from '../pubs/PubClubCard'
-
+import PubForm from '../pubs/PubForm'
 
 function ClubShow () {
   const [club, setClub] = React.useState('')
@@ -16,7 +16,6 @@ function ClubShow () {
   const { clubId } = useParams()
   // console.log(clubId)
   React.useEffect(() => {
-    console.log('Hello')
     const getData = async () => {
       try {
         const response = await getSingleClub(clubId)
@@ -64,12 +63,14 @@ function ClubShow () {
             <h1>{clubName}</h1>
             <p><u>Location: {location}</u></p>
           </div>
-          <div className="favourites" onClick={toggleLike}>
-            <FontAwesomeIcon icon={faHeart} />
-          </div>
-          <div className="share">
-            <FontAwesomeIcon icon={faUpload} />
-            <p><u>Share</u></p>
+          <div className="icons">
+            <div className="favourites" onClick={toggleLike}>
+              <FontAwesomeIcon icon={faHeart} />
+            </div>
+            <div className="share">
+              <FontAwesomeIcon icon={faUpload} />
+              <p><u>Share</u></p>
+            </div>
           </div>
           <div className="gallery"> 
             <div className="main-image">
@@ -117,6 +118,7 @@ function ClubShow () {
                 zoom={15}
               />
             </div>
+            <PubForm clubId={clubId} club={ { ...club } } setClub={setClub}/>
           </div>
         </div>
 

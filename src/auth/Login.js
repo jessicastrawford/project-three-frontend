@@ -4,6 +4,7 @@ import { loginUser } from '../lib/api'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { setToken } from '../lib/auth'
+import Loading from '../components/common/Loading'
 const eye = <FontAwesomeIcon icon={faEye} />
 
 
@@ -42,8 +43,9 @@ function Login() {
   }
 
   return (
-    <>
-      <section className="section register-box animate__animated animate__fadeInUp" onSubmit={handleSubmit}>
+    <section className="section">
+    <Loading />
+      <section className="section register-box" onSubmit={handleSubmit}>
         <div>
           <h1>Please Login Below</h1>
           <hr/>
@@ -81,13 +83,13 @@ function Login() {
           {errors ? <p className="error">Please enter valid credentials...</p> : <p></p>}
           <button 
             type="submit" 
-            className="button login-button is-fullwidth" 
+            className="button login-button" 
             onClick={handleSubmit}>
               Log In
           </button>
         </div>
       </section>
-    </>
+    </section>
   )
 }
 

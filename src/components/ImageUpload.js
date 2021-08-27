@@ -35,7 +35,7 @@ function ImageUploadField({ onChange, labelText, name, value }) {
       {!isUploading && !value && (
         <>
           <div className="">
-            <label className="">
+            <label className="label">
               <input
                 className=""
                 type="file"

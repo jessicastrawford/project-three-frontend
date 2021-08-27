@@ -12,7 +12,6 @@ import About from './components/common/About'
 import Footer from './components/common/Footer'
 import PubShow from './components/pubs/PubsShow'
 import PubForm from './components/pubs/PubForm'
-import UserProfileShow from './components/user/UserProfileShow'
 // import './App.scss'
 
 
@@ -24,8 +23,11 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/clubs/:clubId/pubs/:pubId">
+        <Route path="/clubs/:clubId/pubs/:pubId">
           <PubShow />
+        </Route>
+        <Route path="/clubs/:clubId/pubs/">
+          <PubForm />
         </Route>
         <Route path="/clubs/:clubId">
           <ClubShow />
@@ -39,12 +41,9 @@ function App() {
         <Route path="/register">
           <Register />
         </Route>
-        <Route path="/user/">
-          <UserProfileShow />
-        </Route>
-        <Route path="/pub-form">
+        {/* <Route path="/pub-form">
           <PubForm />
-        </Route>
+        </Route> */}
         <Route path="/map">
           <InteractiveMap />
         </Route>
