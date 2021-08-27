@@ -20,6 +20,19 @@ body {
 
 // Navbar
 
+// .nav{
+//     height:30px;
+//     width: 100%;
+//     position:fixed;
+//     top:0;
+//     transition-timing-function: ease-in;
+//     transition:0.5s
+// }
+
+// .nav__blue{
+//     background-color:blue;
+// }
+
 .navbar{
   height: 80px;
   // display: block;
@@ -27,6 +40,8 @@ body {
   top:0;
   width: 100%;
   z-index: 999;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+
 
   
   // .navbar-nav{
@@ -50,20 +65,34 @@ body {
   }
 
 
-.navbarMove {
-  background: pink;
-}
+// .navbarMove {
+//   background: pink;
+// }
 
-.navbarMove.active{
-  background: orange;
+// .navbarMove.active{
+//   background: orange;
 
-}
+// }
 
 
 
 .logo {
   width: 100%;
-  height: 120px;
+  height: 65px;
+  margin-left: 15px;
+}
+
+.navbar-nav{
+  li{
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 20px;
+    font-weight: bold;
+
+    .active {
+      border-bottom: 1px solid black;
+      background-image: url(../assets/football-nav-bar.png);
+    }
+  }
 }
 
 // Carousel

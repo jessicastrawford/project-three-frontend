@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { getSinglePub, getAllComments } from '../../lib/api'
+import { getSinglePub, getAllComments, createAComment } from '../../lib/api'
 import ReactStars from 'react-star-rating-component'
 import ReviewCard from '../reviews/ReviewCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,11 +8,9 @@ import {
   faUpload,
   faHeart } from '@fortawesome/free-solid-svg-icons'
 import ReactMapGL from 'react-map-gl'
-// import { isAuthenticated } from '../../lib/auth'
+import { isAuthenticated } from '../../lib/auth'
 
 const initialState = {
-  addedBy: '',
-  createdAt: '',
   text: '',
   rating: '',
 }
@@ -26,33 +24,38 @@ function PubShow () {
   const [formData, setFormData] = React.useState(initialState)
   // const [nextValue, setNextValue] = React.useState(1)
   const [rating, setRating] = React.useState(1)
+  const [errors, setErrors] = React.useState(false)
 
   const { clubId, pubId } = useParams()
 
   const handleRating = (nextValue) => {
     setRating({ nextValue })
     console.log(nextValue)
+    console.log(rating)
+    setFormData({ ...formData, rating: rating.nextValue  })
   }
 
-  // constonStarClick(nextValue, prevValue, name) {
-  //   setNextValue({rating: nextValue})
-  // }
-
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e, nextValue) => {
+    setRating({ nextValue })
     e.preventDefault()
+    console.log(formData)
+    try {
+      const res = await createAComment(clubId, pubId, formData) 
+      if (!isAuthenticated) throw new Error
+      console.log(res)
+    } catch (err){
+      console.log(err)
+      setErrors(true)
+    }
     window.alert(`Submitting ${JSON.stringify(formData, null, 2)}`)
   }
   
   const handleChange = (e) => {
     e.preventDefault()
     setFormData({ ...formData, [e.target.name]: e.target.value })
+    console.log(formData)
     // setFormErrors({ ...formErrors, [e.target.name]: '' })
   }
-
-  // const handleRating = () => {
-  //   return 
-  // }
 
   React.useEffect(() => {
     const getData = async () => {
@@ -162,7 +165,7 @@ function PubShow () {
         <form className="user-reviews">
           <h3 className="review-title">Write Your Own Review...</h3>
           <hr/>
-          {isClicked && <>
+          {isClicked && isAuthenticated && <>
             <div className="user-star-ratings">
               {/* <div>
                 <label>Rating:</label>
@@ -178,6 +181,7 @@ function PubShow () {
                   fullIcon={<i className="fa fa-star"></i>}
                   emptyIcon={<i className="far fa-star"></i>}
                 />
+                {errors.rating && <p className="help is-danger">Rating is required</p>}
               </div>
             </div>
             <textarea
@@ -187,12 +191,16 @@ function PubShow () {
               onChange={handleChange}
               placeholder="Add your review here.."
             />
+            {errors.text && <p className="help is-danger">Comment is required</p>}
           </>} 
         </form>
+        {/* {errors ? <p className="error">Comment and ratings are required...</p> : <p></p>} */}
         <div>
           {!isClicked ? <button className="button" onClick={handleClick}>
             Add Your Review
-          </button> : <button className="button" onSubmit={handleSubmit}>Submit</button>}
+          </button> : <button className="button" onClick={handleSubmit}>Submit</button>}
+        </div>
+        <div>
         </div>
       </section>
     </section>
