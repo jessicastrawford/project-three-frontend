@@ -794,7 +794,7 @@ footer{
 // Pub Form
 
 .section-wrapper {
-  border: 1px solid black;
+  margin-top: 30px;
   width: 500px;
   height:600px;
 }
@@ -802,16 +802,24 @@ footer{
 .form-wrapper {
   margin: 0 auto;
   text-align: center;
-  border: 1px solid black;
-  width: 450px;
+  // border: 1px solid black;
+  // border-radius: 5px;
+  width: 400px;
   height:500px;
   padding: 40px 0px;
 
   input {
     border: 1px solid black;
+    border-radius: 5px;
     height: 30px;
-    width: 100px;
+    width: 50%;
   }
+
+  select {
+    margin: 10px;
+  }
+
+
 }
 
 

@@ -23,8 +23,11 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/clubs/:clubId/pubs/:pubId">
+        <Route path="/clubs/:clubId/pubs/:pubId">
           <PubShow />
+        </Route>
+        <Route path="/clubs/:clubId/pubs/">
+          <PubForm />
         </Route>
         <Route path="/clubs/:clubId">
           <ClubShow />
@@ -38,9 +41,9 @@ function App() {
         <Route path="/register">
           <Register />
         </Route>
-        <Route path="/pub-form">
+        {/* <Route path="/pub-form">
           <PubForm />
-        </Route>
+        </Route> */}
         <Route path="/map">
           <InteractiveMap />
         </Route>

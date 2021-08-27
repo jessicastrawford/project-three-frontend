@@ -67,8 +67,8 @@ export function getSinglePub(clubId, pubId) {
   return axios.get(`${baseUrl}/clubs/${clubId}/pubs/${pubId}`)
 }
 
-export function createPub(formdata) {
-  return axios.post('/api/pubs', formdata, headers())
+export function createPub(clubId, formdata) {
+  return axios.post(`/api/clubs/${clubId}/pubs`, formdata, headers())
 }
 
 export function deletePub(pubId) {
