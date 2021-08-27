@@ -47,14 +47,9 @@ function ClubShow () {
 
   const toggleLike = async () => {
     try {
-      const club = await getSingleClub(clubId)
-      const userId = club.data.likedBy.map(user => {
-        console.log(user._id)
-        user._id === club.data._id ? user._id : null
-      })
       if (!isAuthenticated()) throw new Error
-      const like = await likeClub(clubId, userId)
-      console.log(club.data.likedBy, like)
+      const like = await likeClub(clubId)
+      console.log(like)
     } catch (err) {
       console.log(err)
     }
@@ -68,12 +63,14 @@ function ClubShow () {
             <h1>{clubName}</h1>
             <p><u>Location: {location}</u></p>
           </div>
-          <div className="favourites" onClick={toggleLike}>
-            <FontAwesomeIcon icon={faHeart} />
-          </div>
-          <div className="share">
-            <FontAwesomeIcon icon={faUpload} />
-            <p><u>Share</u></p>
+          <div className="icons">
+            <div className="favourites" onClick={toggleLike}>
+              <FontAwesomeIcon icon={faHeart} />
+            </div>
+            <div className="share">
+              <FontAwesomeIcon icon={faUpload} />
+              <p><u>Share</u></p>
+            </div>
           </div>
           <div className="gallery"> 
             <div className="main-image">

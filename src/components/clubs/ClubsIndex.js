@@ -5,7 +5,7 @@ import Loading from '../common/Loading'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { getSingleClub, likeClub } from '../../lib/api'
+import { likeClub } from '../../lib/api'
 import { isAuthenticated } from '../../lib/auth'
 
 function ClubsIndex() {
@@ -43,16 +43,10 @@ function ClubsIndex() {
 
   const toggleLike = async (e) => {
     const clubId = e.target.parentElement.id
-    console.log(clubId)
     try {
-      const club = await getSingleClub(clubId)
-      const userId = club.data.likedBy.map(user => {
-        console.log(user._id)
-        user._id === club.data._id ? user._id : null
-      })
       if (!isAuthenticated()) throw new Error
-      const like = await likeClub(clubId, userId)
-      console.log(club.data.likedBy, like)
+      const like = await likeClub(clubId)
+      console.log(like)
     } catch (err) {
       console.log(err)
     }
@@ -64,7 +58,7 @@ function ClubsIndex() {
       <div>
         <div className="image">
           <div className="title-text">
-            <h1 className="slide-right">Choose A Club</h1>
+            <h1 className="slide-right">Choose A Club...</h1>
           </div>
           <div className="search-box">
             <div className="search-bar">
@@ -95,13 +89,12 @@ function ClubsIndex() {
         <div className="club-card-container">
           {isLoading && Loading} 
           {!isLoading && filteredClubs().map(club => ( 
-            <section key={club._id}>
+            <section key={club._id} className="full-card">
               <Link to={`/clubs/${club._id}`} key={club._id}>
                 <div className="club-card">
                   <img src={club.logo} className="image"/>
                   <div className="middle">
                     <h3 className="text">{club.clubName}</h3>
-                    
                   </div>
                 </div>
               </Link>
