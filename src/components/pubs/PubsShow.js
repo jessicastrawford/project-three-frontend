@@ -159,20 +159,27 @@ function PubShow () {
             ))
           }
         </div>
-        <form>
-          <p>Reviews:</p>
+        <form className="user-reviews">
+          <h3 className="review-title">Write Your Own Review...</h3>
+          <hr/>
           {isClicked && <>
-            <label>Rating: </label>
-            <ReactStars
-              count={5}
-              size={20}
-              half={false}
-              name="rating"
-              value={parseInt(rating.nextValue)}
-              onStarHover={handleRating}
-              fullIcon={<i className="fa fa-star"></i>}
-              emptyIcon={<i className="far fa-star"></i>}
-            />
+            <div className="user-star-ratings">
+              {/* <div>
+                <label>Rating:</label>
+              </div> */}
+              <div className="stars">
+                <ReactStars
+                  count={5}
+                  size={20}
+                  half={false}
+                  name="rating"
+                  value={parseInt(rating.nextValue)}
+                  onStarHover={handleRating}
+                  fullIcon={<i className="fa fa-star"></i>}
+                  emptyIcon={<i className="far fa-star"></i>}
+                />
+              </div>
+            </div>
             <textarea
               className="textarea"
               name="text"
@@ -185,7 +192,7 @@ function PubShow () {
         <div>
           {!isClicked ? <button className="button" onClick={handleClick}>
             Add Your Review
-          </button> : <button onSubmit={handleSubmit}>Submit</button>}
+          </button> : <button className="button" onSubmit={handleSubmit}>Submit</button>}
         </div>
       </section>
     </section>
