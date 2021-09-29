@@ -19,10 +19,8 @@ const initialState = {
 function PubShow () {
   const [pub, setPub] = React.useState('')
   const [pubReviews, setPubReviews] = React.useState([])
-  // let isClicked = false
   const [isClicked, setIsClicked] = React.useState(false)
   const [formData, setFormData] = React.useState(initialState)
-  // const [nextValue, setNextValue] = React.useState(1)
   const [rating, setRating] = React.useState(1)
   const [errors, setErrors] = React.useState(false)
 
@@ -30,32 +28,33 @@ function PubShow () {
 
   const handleRating = (nextValue) => {
     setRating({ nextValue })
-    console.log(nextValue)
-    console.log(rating)
     setFormData({ ...formData, rating: rating.nextValue  })
   }
 
-  const handleSubmit = async (e, nextValue) => {
-    setRating({ nextValue })
-    e.preventDefault()
-    console.log(formData)
-    try {
-      const res = await createAComment(clubId, pubId, formData) 
-      if (!isAuthenticated) throw new Error
-      console.log(res)
-    } catch (err){
-      console.log(err)
-      setErrors(true)
-    }
-    window.alert(`Submitting ${JSON.stringify(formData, null, 2)}`)
-  }
-  
   const handleChange = (e) => {
     e.preventDefault()
     setFormData({ ...formData, [e.target.name]: e.target.value })
     console.log(formData)
     // setFormErrors({ ...formErrors, [e.target.name]: '' })
   }
+
+  const handleSubmit = async (e, nextValue) => {
+
+    e.preventDefault()
+
+    try {
+      setRating({ nextValue })
+      await createAComment(clubId, pubId, formData) 
+      const reviewsWithAddedReview = await getAllComments(clubId, pubId)
+      setPubReviews(reviewsWithAddedReview.data)
+      setFormData( { text: '' })
+      if (!isAuthenticated) throw new Error
+    } catch (err){
+      console.log(err)
+      setErrors(true)
+    }
+  }
+
 
   React.useEffect(() => {
     const getData = async () => {
@@ -85,7 +84,6 @@ function PubShow () {
 
   const {
     pubName,
-    // comments,
     userRating,
     latitude,
     longitude,
@@ -102,25 +100,23 @@ function PubShow () {
   return (
     <section className="pub-show-page">
       <div className="pub-card">
-        <div className="title-icons">
-          <div className="icons">
-            <div className="icon">
-              <FontAwesomeIcon icon={faHeart} />
-            </div>
-            <div className="icon">
-              <FontAwesomeIcon icon={faUpload} />
-            </div>
-            <div className="share">
-              <p><u>Share</u></p>
-            </div>
-          </div>
-        </div>
         <div className="box-section">
           <div className="title-and-image">
             <h3>{pubName}</h3>
-            <figure className="image">
-              <img src={image} alt={pubName}/>
-            </figure>
+            <div className="title-icons">
+              <div className="icons">
+                <div className="icon">
+                  <FontAwesomeIcon icon={faHeart} />
+                </div>
+                <div className="icon">
+                  <FontAwesomeIcon icon={faUpload} />
+                </div>
+                <div className="share">
+                  <p><u>Share</u></p>
+                </div>
+              </div>
+            </div> 
+            <img src={image} alt={pubName} className="image"/>
           </div>
           <div className="map-container">
             <ReactMapGL
@@ -148,7 +144,7 @@ function PubShow () {
           emptyIcon={<i className="far fa-star"></i>}s
           fullIcon={<i className="fa fa-star"></i>}
           edit={false}
-          // starColor={'red'}
+          starColor={'red'}
         />
         <p>{description}</p>
       </div>
@@ -167,9 +163,6 @@ function PubShow () {
           <hr/>
           {isClicked && isAuthenticated && <>
             <div className="user-star-ratings">
-              {/* <div>
-                <label>Rating:</label>
-              </div> */}
               <div className="stars">
                 <ReactStars
                   count={5}
@@ -177,11 +170,11 @@ function PubShow () {
                   half={false}
                   name="rating"
                   value={parseInt(rating.nextValue)}
-                  onStarHover={handleRating}
+                  onStarClick={handleRating}
                   fullIcon={<i className="fa fa-star"></i>}
                   emptyIcon={<i className="far fa-star"></i>}
                 />
-                {errors.rating && <p className="help is-danger">Rating is required</p>}
+                {errors ?  <p>Rating is required</p> : ''}
               </div>
             </div>
             <textarea
@@ -191,14 +184,14 @@ function PubShow () {
               onChange={handleChange}
               placeholder="Add your review here.."
             />
-            {errors.text && <p className="help is-danger">Comment is required</p>}
+            {errors ? <p>Comment is required</p> : ''}
           </>} 
         </form>
         {/* {errors ? <p className="error">Comment and ratings are required...</p> : <p></p>} */}
         <div>
           {!isClicked ? <button className="button" onClick={handleClick}>
-            Add Your Review
-          </button> : <button className="button" onClick={handleSubmit}>Submit</button>}
+          Add Your Review
+          </button> : <button className="submit-button" onClick={handleSubmit}>Submit</button>}
         </div>
         <div>
         </div>

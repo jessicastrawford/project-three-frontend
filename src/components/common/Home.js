@@ -2,10 +2,9 @@ import React from 'react'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import Signup from './Signup'
-// import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { pubs } from '../../data/pubs'
-import { getAllPubs } from '../../lib/api'
 import PubHomepageCard from '../pubs/PubHomepageCard'
 
 import image1 from '../../assets/1.jpg'
@@ -81,7 +80,6 @@ function Home() {
     return highestRated
   })
   
-  console.log(filteredPubs)
 
   return (
     <>
@@ -95,17 +93,15 @@ function Home() {
           </AliceCarousel>
         </div> 
       </section>
-      <section className="pub-cards">
-      </section>
-      <section>
+      <section className="homepage-pubcards">
         <div className="title">
-          <br/>
-          <h3><center>Top 5 Rated Pubs</center></h3>
-          <br/>
+          <h3>Top 5 Rated Pubs</h3>
         </div>
         <div className="pub-cards">
           {filteredPubs.map(pub => (
-            <PubHomepageCard key={pub._id} pub={pub} />
+            <Link to={`clubs/pubs/${pub.id}`} key={pub._id} >
+              <PubHomepageCard pub={pub} />
+            </Link>
           ))}
         </div>
       </section>

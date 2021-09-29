@@ -44,7 +44,7 @@ function Login() {
 
   return (
     <section className="section">
-    <Loading />
+      <Loading />
       <section className="section register-box" onSubmit={handleSubmit}>
         <div>
           <h1>Please Login Below</h1>
@@ -58,7 +58,6 @@ function Login() {
             value={formData.email}
             onChange={handleChange}
           />
-          {errors.email && <p className="help is-danger">email error</p>}
         </div>
         <div className="register-bottom">
           <input
@@ -70,9 +69,6 @@ function Login() {
             onChange={handleChange}
           />
           <i onClick={togglePasswordVisiblity}>{eye}</i>
-          {errors.password && (
-            <p className="help is-danger">password error</p>
-          )}
         </div>
         <div className="register-info">
           <p>

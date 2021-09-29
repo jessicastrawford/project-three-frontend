@@ -12,8 +12,7 @@ import About from './components/common/About'
 import Footer from './components/common/Footer'
 import PubShow from './components/pubs/PubsShow'
 import PubForm from './components/pubs/PubForm'
-// import './App.scss'
-
+import Profile from './components/user/UserProfileShow'
 
 function App() {
   return (
@@ -41,14 +40,14 @@ function App() {
         <Route path="/register">
           <Register />
         </Route>
-        {/* <Route path="/pub-form">
-          <PubForm />
-        </Route> */}
         <Route path="/map">
           <InteractiveMap />
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/profile">
+          <Profile />
         </Route>
       </Switch>
       <Footer />

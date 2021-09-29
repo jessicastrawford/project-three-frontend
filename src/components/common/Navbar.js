@@ -1,16 +1,19 @@
 import { NavLink } from 'react-router-dom'
 import React from 'react'
 import logo from '../../assets/Awaydays-1.png'
+import { isAuthenticated, logout } from '../../lib/auth'
+import { useHistory } from 'react-router'
 
 function Nav () {
 
-  // const [click, setClick] = React.useState(false)
-  // const [button, setButton] = React.useState(true)
   const [show, setShow] = React.useState(false)
+  const isLoggedIn = isAuthenticated()
+  const history = useHistory()
 
   const controlNavbar = () => {
     if (window.scrollY > 100) {
       setShow(false)
+      console.log(show)
     } else {
       setShow(true)
     }
@@ -35,6 +38,12 @@ function Nav () {
     }
   }, [])
 
+  const handleLogout = () => {
+    logout()
+    history.push('/')
+
+  }
+
 
   return (
     // <nav className={navbar ? 'navbarMove active' : 'navbarMove'}>
@@ -48,9 +57,15 @@ function Nav () {
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item"><NavLink className="nav-link" to="/clubs">Clubs</NavLink></li>
-              <li className="nav-item"><NavLink className="nav-link" to="register">Register</NavLink></li>
-              <li className="nav-item"><NavLink className="nav-link" to="login">Login</NavLink></li>
-              <li className="nav-item"><NavLink className="nav-link" to="/user">Profile</NavLink></li>
+              <li className="nav-item"><NavLink className="nav-link" to="/profile">Profile</NavLink></li>
+              {!isLoggedIn ? 
+                <>
+                  <li className="nav-item"><NavLink className="nav-link" to="/register">Register</NavLink></li>
+                  <li className="nav-item"><NavLink className="nav-link" to="/login">Login</NavLink></li>
+                </>
+                :
+                <li className="nav-item"><NavLink className="nav-link" to="/" onClick={handleLogout}>Logout</NavLink></li>
+              }
             </ul>
           </div> 
         </div> 
@@ -62,35 +77,3 @@ function Nav () {
 export default Nav
 
 // Add a userIsAuth ==> then show Logout onClick button
-
-
-{/* <Nav
-  
-alignLinks="right">
-<NavLink exact to="/">Home</NavLink>
-<NavLink to="/clubs" className="right">Clubs</NavLink>
-<NavLink to="/map">Map</NavLink>
-<NavLink to="/register">Register</NavLink>
-</Nav> */}
-
-
-
-// <Navbar className="grey darken-2" alignLinks="right">
-// <NavLink exact to="/">Home</NavLink>
-// <NavLink to="/clubs" className="right">Clubs</NavLink>
-// <NavLink to="/map">Map</NavLink>
-// <NavLink to="/register">Register</NavLink>
-// </Navbar>
-
-// <nav className={`nav ${show && 'nav__white"'}`}>
-// <div className="nav-logo">
-//   <NavLink className="navbar-brand" to="/"><img className="logo" src={logo} alt="logo"/></NavLink>
-// </div>
-// <div>
-//   <ul className="navbar-nav ms-auto">
-//     <li className="nav-item"><NavLink className="nav-link" to="/clubs">Clubs</NavLink></li>
-//     <li className="nav-item"><NavLink className="nav-link" to="register">Register</NavLink></li>
-//     <li className="nav-item"><NavLink className="nav-link" to="login">Login</NavLink></li>
-//   </ul>
-// </div>
-// </nav>

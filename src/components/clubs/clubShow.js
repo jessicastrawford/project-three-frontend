@@ -10,11 +10,9 @@ import PubForm from '../pubs/PubForm'
 
 function ClubShow () {
   const [club, setClub] = React.useState('')
-  // const [user, setUser] = React.useState(null)
-  // const [] = React.useState({
-  // })
+  const [clicked, isClicked] = React.useState(false)
   const { clubId } = useParams()
-  // console.log(clubId)
+
   React.useEffect(() => {
     const getData = async () => {
       try {
@@ -27,7 +25,6 @@ function ClubShow () {
     getData()
   }, [clubId])
 
-  // console.log(club)
   const clubPubs = club.pubs === undefined ? '' : club?.pubs.map(pub => {
     return pub 
   }) 
@@ -53,6 +50,10 @@ function ClubShow () {
     } catch (err) {
       console.log(err)
     }
+  }
+  
+  const handleClick = () => {
+    isClicked(true)
   }
 
   return (
@@ -118,10 +119,13 @@ function ClubShow () {
                 zoom={15}
               />
             </div>
-            <PubForm clubId={clubId} club={ { ...club } } setClub={setClub}/>
+            <div className="add-your-own">
+              <h1> Would you like to add a pub in this area?</h1>
+              <button onClick={handleClick} className="button">Click here</button>
+              {clicked ? <PubForm clubId={clubId} club={ { ...club } } setClub={setClub}/> : ''}
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   )

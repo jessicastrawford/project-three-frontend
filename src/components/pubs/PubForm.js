@@ -54,83 +54,82 @@ function PubForm({ clubId, club, setClub }) {
   }
 
   return (
-    <>
-      <section className="section-wrapper">
-        <div className="form-wrapper">
-          <form onSubmit={handleSubmit}>
-            <div className="field">
-              <label className="">Name of Your Pub</label>
-              <div className="">
-                <input
-                  className="input"
-                  name="pubName"
-                  value={formData.pubName}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="">Latitude</label>
-              <div className="">
-                <input
-                  className=""
-                  name="latitude"
-                  value={formData.latitude}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="">Longitude</label>
-              <div className="">
-                <input
-                  className=""
-                  name="longitude"
-                  value={formData.longitude}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="select">
-              <select
-                name="userRating"
+    <div className="form-wrapper">
+      <form onSubmit={handleSubmit}>
+        <div className="form-left">
+          <div className="field">
+            <label className="">Name of Your Pub</label>
+            <div className="">
+              <input
+                className="input"
+                name="pubName"
+                value={formData.pubName}
                 onChange={handleChange}
-                value={formData.userRating}
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-            </div>
-            <div className="field">
-              <label className="label">Whats it Like?</label>
-              <div className="control">
-                <textarea
-                  className="textarea"
-                  name="description"
-                  value={formData.description}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <ImageUploadField
-                onChange={handleImageUpload}
-                labelText="Upload a Picture"
-                name="image"
-                value={formData.image}
               />
             </div>
-            <div className="btn">
-              <button className="" type="submit">Submit</button>
+          </div>
+          <div className="field">
+            <label className="">Latitude</label>
+            <div className="">
+              <input
+                className=""
+                name="latitude"
+                value={formData.latitude}
+                onChange={handleChange}
+              />
             </div>
-          </form>
+          </div>
+          <div className="field">
+            <label className="">Longitude</label>
+            <div className="">
+              <input
+                className=""
+                name="longitude"
+                value={formData.longitude}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className="select">Rating out of 5
+            <select
+              name="userRating"
+              onChange={handleChange}
+              value={formData.userRating}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div className="field">
+            <label className="label">Whats it Like?</label>
+            <div className="control">
+              <textarea
+                className="textarea"
+                name="description"
+                value={formData.description}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
         </div>
-      </section>
-    </>
-    
+        <div className="form-right">
+          <div className="image-field">
+            <ImageUploadField
+              onChange={handleImageUpload}
+              labelText="Upload a Picture"
+              name="image"
+              value={formData.image}
+            />
+          </div>
+          <div>
+            <button className="button" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
   )
 }
 

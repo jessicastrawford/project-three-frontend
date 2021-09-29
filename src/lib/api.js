@@ -12,27 +12,26 @@ const baseUrl = '/api'
 
 // Auth Requests
 export function registerUser(formData) {
-  return axios.post('/api/register', formData)
+  return axios.post(`${baseUrl}/register`, formData)
 }
 
 export function loginUser(formData) {
-  return axios.post('/api/login', formData)
+  return axios.post(`${baseUrl}/login`, formData)
 }
 
 export function showUserProfile() {
-  return axios.get('/api/user', headers())
+  return axios.get(`${baseUrl}/user`, headers())
 }
 
 export function updateUser() {
-  return axios.put('/api/users/:userId', headers())
+  return axios.put(`${baseUrl}/users/:userId`, headers())
 }
-
 
 
 // Club Requests
 
 export function getAllClubs() {
-  return axios.get('/api/clubs')
+  return axios.get(`${baseUrl}/clubs`)
 }
 
 export function getSingleClub(clubId) {
@@ -40,20 +39,21 @@ export function getSingleClub(clubId) {
 }
 
 export function createClub(formData) {
-  return axios.post('/api/clubs', formData, headers())
+  return axios.post(`${baseUrl}/clubs`, formData, headers())
 }
 
 export function deleteClub(clubId, formData) {
-  return axios.delete(`/api/clubs/${clubId}`, formData, headers())
+  return axios.delete(`${baseUrl}/clubs/${clubId}`, formData, headers())
 }
 
 export function editClub(clubId, formData) {
-  return axios.put(`/api/clubs/${clubId}`, formData, headers())
+  return axios.put(`${baseUrl}/clubs/${clubId}`, formData, headers())
 }
 
 export function likeClub(clubId, userId) {
-  return axios.post(`/api/clubs/${clubId}/like`, userId, headers())
+  return axios.post(`${baseUrl}/clubs/${clubId}/like`, userId, headers())
 }
+
 
 
 // Pub Requests
@@ -68,19 +68,19 @@ export function getSinglePub(clubId, pubId) {
 }
 
 export function createPub(clubId, formdata) {
-  return axios.post(`/api/clubs/${clubId}/pubs`, formdata, headers())
+  return axios.post(`${baseUrl}/clubs/${clubId}/pubs`, formdata, headers())
 }
 
 export function deletePub(pubId) {
-  return axios.delete(`/api/pubs/${pubId}`, headers())
+  return axios.delete(`${baseUrl}/pubs/${pubId}`, headers())
 }
 
 export function editPub(pubId, formdata){
-  return axios.put(`/api/pubs/${pubId}`, formdata, headers())
+  return axios.put(`${baseUrl}/pubs/${pubId}`, formdata, headers())
 }
 
 export function likePub(clubId, pubId, userId) {
-  return axios.post(`/api/clubs/${clubId}/pubs/${pubId}/like`, userId, headers())
+  return axios.post(`${baseUrl}/clubs/${clubId}/pubs/${pubId}/like`, userId, headers())
 }
 
 // Comments
@@ -94,7 +94,6 @@ export function createAComment(clubId, pubId, formData) {
 }
 
 export function deleteAComment(clubId, pubId, commentId) {
-  return axios.delete(`${baseUrl}/clubs/${clubId}/pubs/${pubId}/comments/${commentId}`)
+  return axios.delete(`${baseUrl}/clubs/${clubId}/pubs/${pubId}/comments/${commentId}`, headers())
 }
-
 

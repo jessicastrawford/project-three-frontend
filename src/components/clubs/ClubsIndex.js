@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Loading from '../common/Loading'
-// import heroimage from '../../assets/index-page.png'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { likeClub } from '../../lib/api'
 import { isAuthenticated } from '../../lib/auth'
+import image1 from '../../assets/hero2cropped.png'
 
 function ClubsIndex() {
   const [clubs, setClubs] = React.useState(null)
@@ -55,34 +55,36 @@ function ClubsIndex() {
 
   return (
     <section className="club-index-wrapper">
-      <div>
-        <div className="image">
-          <div className="title-text">
-            <h1 className="slide-right">Choose A Club...</h1>
+      <div className="upper-section">
+        <div className="right-side">
+          <img src={image1} alt="football-collage"/>
+        </div>
+      </div>
+      <div className="left-side">
+        <div>
+          <h1>Choose A Club</h1>
+        </div>
+        <div>
+          <div>
+            <label className="label">Search a Club</label>
           </div>
-          <div className="search-box">
-            <div className="search-bar">
-              <input type="text" placeholder="Search...." onChange={handleSearch}/>
-            </div>
-            <div className="field">
-              <label className="label">Pick a League</label>
-              <div className="select">
-                <select
-                  name="league"
-                  onChange={handleLeagueFilter}
-                  value={clubs?.league}
-                >
-                  <option value="" disabled></option>
-                  <option value="all">All</option>
-                  <option value="Premier League">Premier League</option>
-                  <option value="Championship">Championship</option>
-                  <option value="League One">League One</option>
-                  <option value="League Two">League Two</option>
-                  <option value="National league">National League</option>
-                </select>
-              </div>
-            </div>
+          <input type="text" placeholder="Search...." onChange={handleSearch} className="search"/>
+          <div>
+            <label className="label">Pick a League</label>
           </div>
+          <select
+            name="league"
+            onChange={handleLeagueFilter}
+            value={clubs?.league}
+          >
+            <option value="" disabled></option>
+            <option value="all">All</option>
+            <option value="Premier League">Premier League</option>
+            <option value="Championship">Championship</option>
+            <option value="League One">League One</option>
+            <option value="League Two">League Two</option>
+            <option value="National league">National League</option>
+          </select>
         </div>
       </div>
       <div className="dropdown-wrapper">
