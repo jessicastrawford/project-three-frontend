@@ -308,5 +308,3 @@ Another win that I am hugely inspired by is that even when the content I am crea
 In the planning stages I looked into the football video API, ScoreBat which includes embedded code for goals and highlights from matches. I thought this would be a great addition to add into the clubs show pages. However upon realising that this was a bigger job than I initially thought and given our timeframe, I didn’t get round to adding this function in. 
 
 During the planning stages we spoke about adding in an interactive map page that would include clickable pub and club icons positioned in their location, taking you to their given show page. We didn’t get round to adding in this page however I would like to have a play with Mapbox and add this feature in the future. 
-
-<img width="709" alt="Screenshot 2021-10-08 at 14 34 50" src="https://user-images.githubusercontent.com/83759837/136566582-b48c781c-09b3-4e09-a0ee-4ab0bfdd6729.png">
